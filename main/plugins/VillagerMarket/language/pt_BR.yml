@@ -1,0 +1,864 @@
+#----------------------- General -----------------------#
+
+#Time localization
+time:
+  seconds: segundos
+  minutes: minutos
+  minute: minuto
+  hours: horas
+  hour: hora
+  days: dias
+  day: dia
+  never: nunca
+  indefinitely: indefinidamente
+  less_than_a_minute: Menos de um minuto
+
+#Quantity localization
+quantity:
+  free: grátis
+  infinite: infinito
+  unlimited: ilimitado
+
+#Villager status (Used for PAPI placeholders)
+status:
+  available: '&aDisponível'
+  bought: '&cComprado'
+  no_owner: '&7Nenhum'
+
+#Villager name settings
+villager:
+  name_admin: '&cLoja Admin'
+  name_available: '&aLoja disponível!'
+  name_taken: '&bLoja de %player%'
+
+
+#----------------------- Messages -----------------------#
+
+messages:
+  invalid_command_usage: '&cComando inválido! Use &e/vm help'
+  reloaded: '&aPlugin recarregado.'
+  cancelled: '&cA ação foi cancelada!'
+  not_number: '&cVocê precisa digitar um número!'
+  use_dot: '&cUse ponto ao invés de virgula para decimais!'
+  not_valid_range: '&cA quantidade precisa ser entre 1 e 64!'
+  amount_successful: '&aQuantia definida com sucesso.'
+  price_successful: '&aPreço definido com sucesso.'
+  negative_price: '&cO preço não pode ser negativo!'
+  add_successful: '&aItem adicionado com sucesso.'
+  type_price: '&bPor favor digite o preço do item no chat...'
+  type_amount: '&bPor favor digite a quantidade que você deseja vender/comprar no chat...'
+  #Placeholder: %cancel% (see cancel option above)
+  type_cancel: '&bOu digite &c%cancel% &bpara cancelar'
+  sold_shop: '&bLoja vendida! Agora está disponível para compra novamente.'
+  not_enough_money: '&cVocê não tem dinheiro para comprar isso!'
+  not_enough_stock: '&cNão tem itens suficientes no estoque no momento!'
+  remove_villager: '&cClique com botão direito no &bLojaVillager &cque você quer remover...'
+  no_villager_shop: '&cIsso não é uma LojaVillager!'
+  villager_removed: '&cLojaVillager removida!'
+  blacklisted: '&cEsse item está na lista negra!'
+  owner_not_enough_money: '&cO dono da loja não tem dinheiro suficiente!'
+  not_enough_in_inventory: '&cVocê não tem itens suficientes no inventário!'
+  #Placeholders: %player%, %amount%, %item%, %price%
+  bought_item_as_owner: '&b%player%&7 vendeu a você &b%amount%x %item%&7 por &a%price%&7.'
+  #Placeholders: %player%, %amount%, %material%, %price%
+  sold_item_as_owner: '&b%player%&7 comprou &b%amount%x %item%&7 de você por &a%price%&7.'
+  change_name: '&bPor favor digite o nome da loja no chat...'
+  change_name_set: '&aNome definido com sucesso para: &r%name%&a.'
+  must_be_menulore: '&cPor favor alterne de volta para &e&nhistória do menu&c para vender/comprar
+    itens!'
+  cannot_buy_from_yourself: '&cVocê não pode comprar itens de você mesmo!'
+  cannot_sell_to_yourself: '&cVocê não pode vender itens de você mesmo!'
+  tax: '&a%tax% &7foi tomado de impostos.'
+  expired: '&cSua loja expirou! Qualquer item de estoque pode ser recuperado usando
+    &e/vm expiredstorage&7.'
+  move_villager: '&7Clique com o botão direito na &bLojaVillager &7que você quer mover.'
+  move_villager_to: '&7Clique no bloco que você quer mover a sua &bLoja Villager&7 para.'
+  max_rent_time: '&cNão é possível aumentar o tempo ainda mais. O tempo máximo do aluguel
+    foi atingido!'
+  search_result: '&7Encontrou &b%amount% perto de &7LojasVillager.'
+  search_shop_info: '&7>> %name% &7na localização: &c%location%'
+  get_stats: '&7Clique com o botão direito na &bLojaVillager &7para ver as estatísticas.,'
+  not_owner: '&cVocê não é o dono dessa Loja Villager!'
+  type_limit_player: '&bPor favor digite um quantidade máxima que você quer comprar
+    no chat (&c0 &bpara ilimitado)...'
+  type_limit_admin: '&bPor favor digite um limite para compra/venda desse item no chat
+    (&c0 &bpara ilimitado)...'
+  reached_sell_limit: '&cVocê não pode vender mais desse item!'
+  reached_buy_limit: '&cVocê não pode comprar mais desse item!'
+  reached_command_limit: '&cVocê chegou a limite de compra por esse comando!'
+  money_left: '&aVocê tem %amount% sobrando.'
+  money_currently: '&aAtualmente você tem %amount%.'
+  type_command: '&bPor favor digite o comando sem ''/'' (%player% para dica)...'
+  finish_process: '&cPor favor finalize o processo de adicionar um item a loja primeiro!
+    (Digite ''cancel'' para cancelar)'
+  collected_money: '&bColetou &a%amount%.'
+  not_playershop: '&cIsso não é uma Loja de Jogador!'
+  add_trusted: '&7Clique na sua &bLoja Villager &7para &aadicionar &7confiável'
+  remove_trusted: '&7Clique na sua &bLoja Villager &7para &cremover &7confiável'
+  trusted_added: '&aJogador adicionado.'
+  trusted_removed: '&cJogador removido!'
+  region_no_access: '&cVocê não tem acesso a essa região!'
+  no_permission_adminshop: '&cVocê não tem permissão para usar essa Loja Admin!'
+  no_permission_playershop: '&cVocê não tem permissão para comprar em Lojas de Jogador!'
+  no_permission_change_name: '&cVocê não tem permissão para mudar o nome!'
+  no_permission_command: '&cVocê não tem permissão para usar esse comando!'
+  no_permission_buy_shop: '&cVocê não tem permissão para comprar em lojas!'
+  no_permission_use_item: '&cVocê não tem permissão para usar esse item!'
+  no_permission_citizens: '&cVocê não tem permissão para transformar sua loja em um
+    NPC!'
+  no_permission_trade_item: '&cVocê não tem permissão para trocar itens!'
+  max_shops: '&cVocê já é dono de &e%current%&c/&e%max%&c lojas disponíveis!'
+  get_id: '&7Clique com o botão direito em uma &bLoja Villager &7para pegar seu ID!'
+  #Placeholders: %id%
+  id: '&7Entity UUID: &b%id%'
+  type_skin: '&bPor favor digite o nome da skin no chat...'
+  skin_set: '&aSkin definida com sucesso.'
+  no_expired_storage: '&cVocê não tem armazém expirado!'
+  type_limit_cooldown: '&bPor favor digite o limite de tempo no chat (2h, 1d, etc.)
+    ou ''never'' para sem limite...'
+  limit_cooldown_set: '&aTempo limite de troca definido para &e%time%'
+  limits_cleared: '&cLimites redefinidos!'
+  name_blacklisted: '&cVocê não tem permissão para usar esse nome de loja!'
+  max_item_price: '&cPreço do item muito alto! Por favor tente novamente com um preço
+    menor.'
+  shopfront_cooldown: '&cPor favor espere antes de comprar/vender novamente!'
+  max_name_length: '&cEsse nome é muito grande! Comprimento máximo de nome é de %limit%
+    caracteres.'
+  clone_shop: '&7Clique com o botão direito em uma &bLoja Villager &7que você quer clonar.'
+  shop_cloned: '&aLoja Villager clonada com sucesso. Mova ela usando &e/vm move&a.'
+  set_size: '&7Clique com o botão direito na &bLoja Villager &7que deseja definir o
+    tamanho para.'
+  size_set: '&aTamanho definido para &e%size%&a.'
+  #Placeholders: %amount%, %item%, %price%, %shop%
+  bought_item_as_customer: '&7Você comprou &b%amount%x %item%&7 por &a%price%&7 de &r%shop%.'
+  #Placeholders: %amount%, %item%, %price%, %shop%
+  sold_item_as_customer: '&7Você vendeu &b%amount%x %item%&7 por &a%price%&7 para &r%shop%.'
+  type_discount: '&bPor favor digite o desconto (0-100) no chat...'
+  type_time: '&bPor favor, digite o tempo (2h, 1d, etc.) no chat...'
+  not_valid_time: '&cNão é um horário válido! O tempo deve começar com um número e terminar
+    com h, d ou m.'
+  #Placeholders: %shop_name%, %discount%, %item%
+  discount_announcement: '&e%shop_name% &adoes agora têm um &e%discount%% &adesconto
+    em &e%item%&a!'
+  toggle_require_permission: '&7Clique com o botão direito do mouse no &bVillagerShop&7
+    para o qual você deseja alternar o requisito de permissão.'
+  require_permission_enabled: '&aRequisito de permissão ativado! Permissão: &e%permission%'
+  require_permission_disabled: '&cRequisito de permissão desativado!'
+
+stats_message:
+- '&bLojaVillager estatísticas:'
+- '&7>> Itens vendidos: &a%items_sold%'
+- '&7>> Itens comprados: &a%items_bought%'
+- '&7>> Dinheiro ganho: &a%money_earned%'
+- '&7>> Dinheiro gasto: &a%money_spent%'
+
+
+#--------------------- Menu items settings ---------------------#
+
+items:
+  back:
+    name: '&c&lVoltar'
+    material: ARROW
+  filler:
+    name: ''
+    material: GRAY_STAINED_GLASS_PANE
+  next:
+    name: '&ePróximo'
+    material: FEATHER
+    lore:
+    - '&7Próxima página'
+  previous:
+    name: '&eAnterior'
+    material: FEATHER
+    lore:
+    - '&7Página anterior'
+
+#----------------------- Menu settings -----------------------#
+
+menus:
+  #-------------------- Buy Shop --------------------#
+  buy_shop:
+    title: '&8Comprar loja disponível'
+    size: 27
+    filler_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    items:
+      shop_size:
+        material: CHEST
+        slot: 12
+        #Placeholders: %amount%
+        name: '&a%amount%&7 slots de loja'
+        lore:
+        - ''
+      storage_size:
+        material: WRITABLE_BOOK
+        slot: 14
+        #Placeholders: %amount%
+        name: '&a%amount%&7 slots de armazém'
+        lore:
+        - ''
+      buy_shop:
+        material: EMERALD
+        slot: 13
+        name: '&aCompre essa loja!'
+        lore:
+        - '&7Clique para comprar essa loja por &a%price%&7!'
+        - ''
+        - '&7A loja vai ser'
+        - '&7sua por &b%time%&7!'
+  
+  #-------------------- Edit Shop --------------------#
+  edit_shop:
+    title: '&8Editar loja'
+    size: 54
+    filler_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 17
+    - 18
+    - 26
+    - 27
+    - 35
+    - 36
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+    items:
+      #Edit items for sale item
+      edit_shopfront:
+        material: WRITABLE_BOOK
+        slot: 21
+        slot_admin: 21
+        name: '&bEditar vitrine'
+        lore:
+        - '&7Clique para editar itens'
+        - '&7a venda na sua loja'
+      #Preview shop item
+      preview_shop:
+        material: BOOK
+        slot: 23
+        slot_admin: 23
+        name: '&eVer loja'
+        lore:
+        - '&7Clique para ver sua vitrine'
+      #Edit storage item
+      edit_storage:
+        material: CHEST
+        slot: 22
+        name: '&cEditar armazém'
+        lore:
+        - '&7Clique para editar o armazém da loja'
+      #Edit villager item
+      edit_villager:
+        material: VILLAGER_SPAWN_EGG
+        slot: 30
+        slot_admin: 30
+        name: '&eEditar villager'
+        lore:
+        - '&7Clique para editar a profissão'
+        - '&7do seu villager'
+      #Change villager name item
+      change_name:
+        material: NAME_TAG
+        slot: 32
+        slot_admin: 32
+        name: '&eMudar o nome do villager'
+        lore:
+        - '&7Clique para mudar o nome do seu villager'
+      #Sell shop item
+      sell_shop:
+        material: FEATHER
+        slot: 31
+        name: '&cVender/abandonar loja'
+        lore:
+        - '&7Clique para abandonar sua'
+        - '&7Loja Villager!'
+      #Collect money (this needs to be enabled in general settings)
+      collect_money:
+        material: GOLD_INGOT
+        slot: 41
+        name: '&aColetar dinheiro'
+        #Placeholders: %worth%
+        lore:
+        - '&7Clique para coletar &a%worth%$'
+      #Add more time item
+      increase_time:
+        material: EMERALD
+        slot: 13
+        name: '&aAumentar tempo do aluguel'
+        #Placeholders: %expire%, %time%, %price%
+        lore:
+        - '&7Sua loja vai expirar em: &e%expire%'
+        - ''
+        - '&7Clique para aumentar seu tempo de'
+        - '&7aluguel para &b%time%&7 por &a%price%&7!'
+      #Enable trade notifications item
+      enable_trade_notifications:
+        material: RED_TERRACOTTA
+        slot: 40
+        name: '&eNotificações de negociação&7: &cDesativado'
+        lore:
+        - '&7Clique para ativar as notificações de negociação'
+      #Disable trade notifications item
+      disable_trade_notifications:
+        material: LIME_TERRACOTTA
+        slot: 40
+        name: '&eNotificações de negociação&7: &aHabilitadas'
+        lore:
+        - '&7Clique para desativar as notificações de negociação'
+  
+  #-------------------- Shopfront --------------------#
+  shopfront:
+    title: '&7%shop%'
+    #Placeholders: %item_name%, %mode%
+    item_name: '&f%item_name% %mode%'
+    detail_suffix: '&8(Detalhes)'
+    #Cooldown between selling/buying items (milliseconds)
+    cooldown: 500
+    items:
+      toggle_details:
+        name: '&eAlternar detalhes'
+        material: BOOK
+        lore:
+        - '&7>> Clique esquerdo para alternar'
+        - '&7entre &ehistória do item'
+        - '&7e &ehistória do menu&7!'
+        - ''
+        - '&7>> Clique direito &7para voltar'
+    modes:
+      buy: '&8[&aCOMPRAR&8]'
+      sell: '&8[&aVENDER&8]'
+      buy_and_sell: '&8[&aCOMPRAR&7/&aVENDER&8]'
+      command: '&8[&eCOMANDO&8]'
+      trade: '&8[&eTROCA&8]'
+    discount_lore:
+    - ''
+    - '&7Desconto&f: &e%discount%%'
+    - '&7Desconto termina em&f: &e%time%'
+    player_shop:
+      #Placeholders: %amount%, %price%, %stock%, %mode%
+      trade_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço&f: &a%price%'
+      - '&7Você pode trocar &b%available% &7mais'
+      - ''
+      - '&7>> Clique para trocar'
+      #Placeholders: %amount%, %price%, %stock%, %mode%
+      buy_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço&f: &a%price%'
+      - '&7Preço/unidade&f: &a%price_per_unit%'
+      - '&7Atualmente &b%stock% &7em estoque'
+      - ''
+      - '&7>> Clique para comprar'
+      #Placeholders: %amount%, %price%, %available%, %mode%
+      sell_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço&f: &a%price%'
+      - '&7Você pode vender &b%available% &7mais'
+      - ''
+      - '&7>> Clique para vender'
+      #Placeholders: %amount%, %price%, %available%, %mode%
+      buy_and_sell_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço de compra&f: &a%buy_price%'
+      - '&7Vender preço&f: &a%sell_price%'
+      - '&7Atualmente &b%stock% &7em estoque'
+      - '&7Você pode vender &b%available% &7mais'
+      - ''
+      - '&7>> Clique esquerdo para comprar'
+      - '&7>> Clique direito para vender'
+    admin_shop:
+      buy_and_sell_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço de compra&f: &a%buy_price%'
+      - '&7Vender preço&f: &a%sell_price%'
+      - '%limit_lore%'
+      - ''
+      - '&7>> Clique esquerdo para comprar'
+      - '&7>> Clique direito para vender'
+      trade_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço&f: &a%price%'
+      - '%limit_lore%'
+      - ''
+      - '&7>> Clique para trocar'
+      sell_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço&f: &a%price%'
+      - '%limit_lore%'
+      - ''
+      - '&7>> Clique para vender'
+      buy_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço&f: &a%price%'
+      - '%limit_lore%'
+      - ''
+      - '&7>> Clique para comprar'
+      command_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço&f: &a%price%'
+      - '%limit_lore%'
+      - ''
+      - '&7>> Clique para comprar comando'
+      buy_limit_lore:
+      - ''
+      - '&7Comprado: (&e%bought%&7/&e%limit%&7)'
+      - '&7Redefine em: &e%reset%'
+      sell_limit_lore:
+      - ''
+      - '&7Vendido: (&e%bought%&7/&e%limit%&7)'
+      - '&7Redefine em: &e%reset%'
+      buy_and_sell_limit_lore:
+      - ''
+      - '&7Comprado ou vendido: (&e%bought%&7/&e%limit%&7)'
+      - '&7Redefine em: &e%reset%'
+  
+  #------------------ Edit Shopfront ------------------#
+  edit_shopfront:
+    title: '&8Adicionar itens para oferta'
+    #Placeholders: %item_name%, %mode%
+    item_name: '&f%item_name% %mode%'
+    modes:
+      buy: '&8[&aCOMPRAR&8]'
+      sell: '&8[&aVENDER&8]'
+      buy_and_sell: '&8[&aVENDER&7/&aCOMPRAR&8]'
+      command: '&8[&eCOMANDO&8]'
+      trade: '&8[&eTROCAR&8]'
+    player_shop:
+      trade_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço&f: &a%price%'
+      - '&7Você pode trocar &b%available% &7mais'
+      - ''
+      - '&7>> Clique para editar'
+      #Placeholders: %amount%, %price%, %stock%
+      sell_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço&f: &a%price%'
+      - '&7Atualmente &b%stock% &7em estoque!'
+      - ''
+      - '&7>> Clique para editar'
+      #Placeholders: %amount%, %price%, %available%
+      buy_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço&f: &a%price%'
+      - '&7Você pode comprar &c%available% &7mais!'
+      - ''
+      - '&7>> Clique para editar'
+      buy_and_sell_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço de compra&f: &a%buy_price%'
+      - '&7Vender preço&f: &a%sell_price%'
+      - '&7Você pode comprar &c%available% &7mais!'
+      - '&7Atualmente &b%stock% &7em estoque!'
+      - ''
+      - '&7>> Clique para editar'
+    admin_shop:
+      standard_lore:
+      - '&7Modo&f: %mode%'
+      - ''
+      - '&7Quantidade&f: &e%amount%'
+      - '&7Preço&f: &a%price%'
+      - '&7Limite do jogador&f: &a%limit%'
+      - ''
+      - '&7>> Clique para editar'
+  
+  #--------------------- Storage ---------------------#
+  storage:
+    title: '&8Armazém da loja'
+  
+  #------------------ Edit Villager ------------------#
+  edit_villager:
+    title: '&8Editar villager'
+    size: 36
+    #This requires citizens to be on the server
+    citizens_item:
+      material: PLAYER_HEAD
+      slot: 31
+      name: '&eDefinir skin em vez disso'
+      lore:
+      - '&7Clique para definir uma skin para essa loja'
+    back_slot: 35
+    filler_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    items:
+      armorer:
+        material: IRON_CHESTPLATE
+        slot: 9
+        name: '&7Armeiro'
+      butcher:
+        material: PORKCHOP
+        slot: 10
+        name: '&cAçougueiro'
+      cartographer:
+        material: MAP
+        slot: 11
+        name: '&bCartógrafo'
+      cleric:
+        material: POTION
+        slot: 12
+        name: '&dClérigo'
+      farmer:
+        material: WHEAT
+        slot: 13
+        name: '&eFazendeiro'
+      fisherman:
+        material: COD
+        slot: 14
+        name: '&bPescador'
+      fletcher:
+        material: FLETCHING_TABLE
+        slot: 15
+        name: '&eFlecheiro'
+      leatherworker:
+        material: LEATHER
+        slot: 16
+        name: '&cCoureiro'
+      librarian:
+        material: BOOK
+        slot: 17
+        name: '&6Bibliotecário'
+      mason:
+        material: BRICK
+        slot: 18
+        name: '&cPedreiro'
+      nitwit:
+        material: PAPER
+        slot: 19
+        name: '&fIdiota'
+      shepherd:
+        material: WHITE_WOOL
+        slot: 20
+        name: '&fPastor'
+      toolsmith:
+        material: IRON_AXE
+        slot: 21
+        name: '&7Ferreiro'
+      weaponsmith:
+        material: IRON_SWORD
+        slot: 22
+        name: '&7Ferreiro de armas'
+      none:
+        material: VILLAGER_SPAWN_EGG
+        slot: 23
+        name: '&cNenhum'
+      #Legacy versions
+      blacksmith:
+        material: ANVIL
+        slot: 9
+        name: '&7Ferreiro'
+      priest:
+        material: POTION
+        slot: 11
+        name: '&dSacerdote'
+      normal:
+        material: VILLAGER_SPAWN_EGG
+        slot: 12
+        name: '&cNenhum'
+  
+  #-------------------- Sell Shop --------------------#
+  sell_shop:
+    title: '&8Você tem certeza?'
+    size: 27
+    filler_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    items:
+      no_cancel:
+        material: RED_TERRACOTTA
+        slot: 14
+        name: '&cNão, cancelar'
+      #If the Shop is reusable (created by command)
+      yes_sell:
+        material: LIME_TERRACOTTA
+        slot: 12
+        name: '&aSim, vender loja'
+        #Placeholders: %amount%
+        lore:
+        - '&7Você vai receber &a50%'
+        - '&7(&a%amount%&7) do dinheiro gasto'
+        - '&7quando você abandonar/vender essa loja'
+        - ''
+      #If the Shop isn't reusable (created using a spawn egg)
+      yes_remove:
+        material: LIME_TERRACOTTA
+        slot: 12
+        name: '&aSim, remover loja'
+        lore:
+        - '&7Isso vai &cremover &7a'
+        - '&7Loja Villager e te dar'
+        - '&7um novo ovo de invocação de loja!'
+  
+  #-------------------- Edit Item --------------------#
+  edit_item:
+    title: '&8Editar Item'
+    size: 54
+    item_slot: 4
+    filler_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 17
+    - 18
+    - 26
+    - 27
+    - 35
+    - 36
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+    back_slot: 53
+    limit_cycle:
+      player: '&eJogador&7 | Servidor'
+      server: '&7Jogador |&e Servidor'
+    mode_cycle:
+      player_shop:
+        item_trade: '&eVender &7(Trocando por item)'
+        sell: '&eVender &7| Comprar | Comprar & Vender'
+        buy: '&7Vender | &eComprar &7| Comprar & Vender'
+        buy_and_sell: '&7Vender | Comprar | &eComprar & Vender'
+      admin_shop:
+        item_trade: '&eVender &7(Trocando por item)'
+        sell: '&eVender &7| Comprar | Comprar & Vender | Comando'
+        buy: '&7Vender | &eComprar &7| Comprar & Vender | Comando'
+        command: '&7Vender | Comprar | Comprar & Vender | &eComando'
+        buy_and_sell: '&7Vender | Comprar | &eComprar & Vender &7| Comando'
+    
+    items:
+      mode:
+        material: OAK_SIGN
+        slot: 22
+        name: '&eModo&7: %mode%'
+        #%cycle% is replaced with cycle values above
+        lore:
+        - '&7Clique para circular:'
+        - '%cycle%'
+      amount:
+        material: CHEST
+        slot: 21
+        name: '&eQuantidade&7: &r%amount%'
+        lore:
+        - '&7Clique para editar'
+      price:
+        material: GOLD_INGOT
+        slot: 23
+        name: '&ePriço&7: &r%price%'
+        lore:
+        - '&7Clique para editar o preço'
+        - ''
+        - '&7>> Clique com um item para trocar'
+        - '&7por um item ao invés de dinheiro'
+        buy_and_sell_lore:
+        - '&7>> Esquerda para definir o preço de compra'
+        - '&7>> Direita para definir o preço de venda'
+        - ''
+        - '&7>> Clique com um item para trocar'
+        - '&7por um item ao invés de dinheiro'
+      delete:
+        material: BARRIER
+        slot: 49
+        name: '&cRemover'
+        lore:
+        - '&7Clique para &cremover o &7item'
+      command:
+        material: COMMAND_BLOCK
+        slot: 31
+        name: '&eComando'
+        lore:
+        - '&7Comandos atuais:'
+        - '&7- &e%command%&7'
+        - ''
+        - '&7>> Esquerda para adicionar'
+        - '&7>> Direita para redefinir'
+      buy_limit:
+        material: FEATHER
+        slot: 31
+        name: '&eLimite de compra&7: %limit%'
+        lore:
+        - '&7>> Clique para editar'
+      player_limit:
+        material: PLAYER_HEAD
+        slot: 30
+        name: '&eLimite de jogador&7: &f%limit%'
+        lore:
+        - '&7>> Clique direito para circular:'
+        - '%cycle%'
+        - ''
+        - '&7>> Clique esquerdo para editar'
+      limit_cooldown:
+        material: CLOCK
+        slot: 32
+        name: '&eLimite de tempo&7: &f%cooldown%'
+        lore:
+        - '&7Próxima redefinição de limite: &e%next%'
+        - ''
+        - '&7>> Clique esquerdo para editar o tempo limite'
+        - '&7>> Clique direito para &credefinir o &7limite'
+      discount:
+        material: EMERALD
+        slot: 13
+        name: '&eDesconto&7: &f%discount%%'
+        lore:
+        - '&7Termina: &e%discount_end%'
+        - ''
+        - '&7>> Clique para editar'
+  confirm_action:
+    title: '&8Você tem certeza?'
+    size: 27
+    filler_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    items:
+      accept:
+        material: GREEN_TERRACOTTA
+        slot: 12
+        name: '&aSim, confirmar'
+      cancel:
+        material: RED_TERRACOTTA
+        slot: 14
+        name: '&cNão, cancelar'
+  
+  
+  #-------------------- Expired Storage --------------------#
+  expired_storage:
+    title: '&8Armazém expirado'
+
+#----------------- Villager Shop Item settings -----------------#
+
+shop_item:
+  material: VILLAGER_SPAWN_EGG
+  name: '&b&lCriar Loja Villager!'
+  #Placeholders: %shop_size%, %storage_size%
+  lore:
+  - '&aColoque &7esse ovo de invocação para'
+  - '&7criar sua própria'
+  - '&aLoja Villager&7!'
+  - ''
+  - '&7>> &aTamanho da Loja&7: &c%shop_size%'
+  - '&7>> &aTamanho do Armazém&7: &c%storage_size%'

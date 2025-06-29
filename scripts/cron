@@ -1,1 +1,0 @@
-0 0,12 * * * bash /home/BACKUP-SCRIPT-FILE-LOCATION.sh -v minecraftdata -c programowaniecraft-minecraft-1 -o /home/BACKUPS-DIRECTORY-LOCATION -r false -d 7

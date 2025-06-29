@@ -1,0 +1,63 @@
+cooldown: 0
+one_time: true
+auto_armor: false
+permission_required: false
+clear_inventory: false
+save_original_items: true
+allow_placeholders_on_original_items: false
+display:
+  default:
+    id: STONE_SWORD
+    name: '&c&l%kit_name% &cKit'
+    amount: 1
+    lore:
+    - '&fThis is a description of the kit.'
+    - ''
+    - '&7Edit it on the &c%kit_name%.yml &7file'
+    - '&7or using &c/kit edit %kit_name%'
+    item_flags:
+    - HIDE_ATTRIBUTES
+  no_permission:
+    id: BARRIER
+    name: '&c&l%kit_name% &cKit'
+    amount: 1
+    lore:
+    - '&cYou don''t have permissions to claim'
+    - '&cthis kit.'
+  cooldown:
+    id: STONE_SWORD
+    name: '&c&l%kit_name% &cKit'
+    amount: 1
+    lore:
+    - '&cYou need to wait &7%time%'
+    - '&cto claim this kit again.'
+    item_flags:
+    - HIDE_ATTRIBUTES
+items:
+  '1':
+    original:
+      ==: org.bukkit.inventory.ItemStack
+      DataVersion: 4325
+      id: minecraft:diamond_ore
+      count: 1
+      components:
+        minecraft:lore: '[{extra:[{bold:0b,color:"gold",italic:0b,obfuscated:0b,strikethrough:0b,text:"(⌐■_■)ノ♪
+          Nikt nie dobierze się do moich rzeczy!",underlined:0b}],text:""}]'
+        minecraft:tooltip_display: '{hidden_components:["minecraft:enchantments"]}'
+        minecraft:enchantments: '{"minecraft:lure":1}'
+        minecraft:custom_name: '{extra:[{bold:0b,color:"green",italic:0b,obfuscated:0b,strikethrough:1b,text:"<---",underlined:0b},{color:"aqua",italic:0b,text:"
+          Ochrona terenu o promieniu 12 bloków "},{color:"green",italic:0b,strikethrough:1b,text:"--->"}],text:""}'
+        minecraft:custom_data: '{PublicBukkitValues:{"protectionstones:ispsblock":1b}}'
+      schema_version: 1
+    preview_slot: 0
+# actions:
+#  claim:
+#    '1':
+#      action: 'playsound: BLOCK_NOTE_BLOCK_PLING;10;2'
+#      execute_before_items: false
+#      count_as_item: false
+#  error:
+#    '1':
+#      action: 'playsound: BLOCK_NOTE_BLOCK_PLING;10;0.1'
+#      execute_before_items: false
+#      count_as_item: false

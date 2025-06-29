@@ -1,0 +1,58 @@
+drop_items_if_full_inventory: false
+claim_kit_short_command: false
+close_inventory_on_claim: false
+kit_preview: false
+kit_preview_requires_kit_permission: false
+first_join_kit: starter
+new_kit_default_save_mode_original: true
+new_kit_default_inventory: "main_inventory"
+new_kit_default_values:
+  cooldown: 3600
+  permission_required: false
+  actions:
+    claim:
+      1:
+        action: "playsound: BLOCK_NOTE_BLOCK_PLING;10;2"
+    error:
+      1:
+        action: "playsound: BLOCK_NOTE_BLOCK_PLING;10;0.1"
+  display:
+    default:
+      id: STONE_SWORD
+      name: "&c&l%kit_name% &cKit"
+      lore:
+        - '&fThis is a description of the kit.'
+        - ''
+        - '&7Edit it on the &c%kit_name%.yml &7file'
+        - '&7or using &c/kit edit %kit_name%'
+      item_flags:
+        - HIDE_ATTRIBUTES
+    no_permission:
+      id: BARRIER
+      name: "&c&l%kit_name% &cKit"
+      lore:
+        - "&cYou don't have permissions to claim"
+        - "&cthis kit."
+    cooldown:
+      id: STONE_SWORD
+      name: "&c&l%kit_name% &cKit"
+      lore:
+        - "&cYou need to wait &7%time%"
+        - "&cto claim this kit again."
+      item_flags:
+        - HIDE_ATTRIBUTES
+player_data_save_time: 300
+update_notify: true
+mysql_database:
+  enabled: false
+  host: localhost
+  port: 3306
+  username: root
+  password: root
+  database: database
+  pool:
+    connectionTimeout: 5000
+  advanced:
+    verifyServerCertificate: false
+    useSSL: true
+    allowPublicKeyRetrieval: true

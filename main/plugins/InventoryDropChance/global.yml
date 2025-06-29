@@ -1,0 +1,36 @@
+# Order of chance calculation, chance given by the command will have the highest priority and will work as FIRST_APPLY for that item
+# If element is not present, it will be ignored, possible values: ITEMSADDDER, CUSTOMMODELDATA, MATERIAL, WORLD, DEFAULT
+chanceOrder:
+- ITEMSADDDER
+- CUSTOMMODELDATA
+- MATERIAL
+- WORLD
+- DEFAULT
+# By wich rule the chance will be applied
+# FIRST_SUCCESS: Each order will be checked; if chance can be applied but didn't happen, the next order will be checked until success or the end of the list.
+# FIRST_APPLY: Each order will be checked; if a chance can be applied, it will be applied and break the loop. In any case,
+#   even if the chance didn't work out, the next order will be checked until the end of the list.
+orderType: FIRST_SUCCESS
+
+# Default drop chance for all items, put 0 to disable
+defaultDropChance: 70
+
+# Default drop chance for all items per world, put {} to disable
+worldValues:
+  exampleWorld: 80
+  exampleWorld2: 20
+
+# Default drop chance for all items per material, put {} to disable
+globalValues: {}
+  # STONE: 10
+  # STICK: 50
+
+# Default drop chance for all items per custom model data, put {} to disable
+customModelDataValues:
+  1: 40
+  2: 10
+
+# Default drop chance for all items from ItemsAdder, requires ItemsAdder plugin, put {} to disable
+itemsAdderValues:
+  example_namespace:example_item2: 25
+  example_namespace:example_item: 75

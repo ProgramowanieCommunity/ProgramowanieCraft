@@ -1,0 +1,2 @@
+gamerule spawnRadius 0
+gamerule playersSleepingPercentage 50

@@ -1,0 +1,340 @@
+cooldown: '&6Uwaga: &7Poczekaj %time% sekund przed ponownym postawieniem!'
+no_such_command: '&cNie ma takiej komendy. Wpisz /ps help po więcej informacji'
+no_access: '&cNie masz uprawnień, aby to tutaj zrobić.'
+no_room_in_inventory: '&cNie masz wystarczająco miejsca w ekwipunku.'
+no_room_dropping_on_floor: '&cNie masz wystarczająco miejsca w ekwipunku. Przedmiot zostanie upuszczony na ziemię.'
+invalid_block: '&cNieprawidłowy blok ochrony.'
+not_enough_money: '&cNie masz wystarczająco pieniędzy! Cena to %price%.'
+paid_money: '&bZapłaciłeś $%price%.'
+invalid_world: '&cNieprawidłowy świat.'
+must_be_player: '&cMusisz być graczem, aby wykonać tę komendę.'
+go_back_page: Wróć do poprzedniej strony.
+go_next_page: Przejdź do następnej strony.
+page_does_not_exist: '&cStrona nie istnieje.'
+help: |-
+  &8&m=====&r Pomoc PS &8&m=====
+  &b> &7/ps help
+help_next: '&7Użyj /ps help %page% aby przejść do następnej strony!'
+command_requires_player_name: '&cTa komenda wymaga nazwy gracza.'
+no_permission_toggle: '&cNie masz uprawnień do użycia komendy toggle.'
+no_permission_create: '&cNie masz uprawnień do postawienia bloku ochrony.'
+no_permission_create_specific: '&cNie masz uprawnień do postawienia tego typu bloku ochrony.'
+no_permission_destroy: '&cNie masz uprawnień do zniszczenia bloku ochrony.'
+no_permission_members: '&cNie masz uprawnień do używania komend członków.'
+no_permission_owners: '&cNie masz uprawnień do używania komend właścicieli.'
+no_permission_admin: '&cNie masz uprawnień do użycia tej komendy.'
+no_permission_count: '&cNie masz uprawnień do użycia tej komendy.'
+no_permission_count_others: '&cNie masz uprawnień do użycia tej komendy.'
+no_permission_flags: '&cNie masz uprawnień do używania komend flag.'
+no_permission_per_flag: '&cNie masz uprawnień do użycia tej flagi.'
+no_permission_rent: '&cNie masz uprawnień do wynajmowania.'
+no_permission_tax: '&cNie masz uprawnień do używania komendy podatku.'
+no_permission_buysell: '&cNie masz uprawnień do kupowania i sprzedawania regionów.'
+no_permission_unhide: '&cNie masz uprawnień do odkrywania bloków ochrony.'
+no_permission_hide: '&cNie masz uprawnień do ukrywania bloków ochrony.'
+no_permission_info: '&cNie masz uprawnień do używania komendy informacji o regionie.'
+no_permission_priority: '&cNie masz uprawnień do używania komendy priorytetu.'
+no_permission_region: '&cNie masz uprawnień do używania komend regionów.'
+no_permission_tp: '&cNie masz uprawnień do teleportowania się do bloków ochrony innych graczy.'
+no_permission_home: '&cNie masz uprawnień do teleportowania się do swoich bloków ochrony.'
+no_permission_unclaim: '&cNie masz uprawnień do używania komendy unclaim.'
+no_permission_unclaim_remote: '&cNie masz uprawnień do używania zdalnej komendy unclaim.'
+no_permission_view: '&cNie masz uprawnień do używania komendy view.'
+no_permission_give: '&cNie masz uprawnień do używania komendy give.'
+no_permission_get: '&cNie masz uprawnień do używania komendy get.'
+no_permission_sethome: '&cNie masz uprawnień do używania komendy sethome.'
+no_permission_list: '&cNie masz uprawnień do używania komendy list.'
+no_permission_list_others: '&cNie masz uprawnień do używania komendy list dla innych.'
+no_permission_name: '&cNie masz uprawnień do używania komendy name.'
+no_permission_setparent: '&cNie masz uprawnień do używania komendy setparent.'
+no_permission_setparent_others: '&cNie masz uprawnień do dziedziczenia z regionów, których nie posiadasz.'
+no_permission_merge: '&cNie masz uprawnień do używania /ps merge.'
+psregion:
+  added_to_region: '&b%player%&7 został dodany do tego regionu.'
+  added_to_region_specific: '&b%player%&7 został dodany do regionu %region%.'
+  removed_from_region: '&b%player%&7 został usunięty z regionu.'
+  removed_from_region_specific: '&b%player%&7 został usunięty z regionu %region%.'
+  not_in_region: '&cNie jesteś w regionie Protection Stones!'
+  player_not_found: '&cGracz nie został znaleziony.'
+  not_ps_region: '&cTo nie jest region Protection Stones.'
+  region_does_not_exist: '&cRegion nie istnieje.'
+  no_regions_owned: '&cNie posiadasz żadnych chronionych regionów w tym świecie!'
+  no_region_permission: '&cNie masz uprawnień do robienia tego w tym regionie.'
+  protected: '&bTen obszar jest teraz chroniony.'
+  no_longer_protected: '&eTen obszar nie jest już chroniony.'
+  cant_protect_that: '&cNie możesz chronić tego obszaru.'
+  reached_region_limit: '&cNie możesz mieć więcej chronionych regionów (%limit%).'
+  reached_per_block_region_limit: '&cNie możesz mieć więcej regionów tego typu (%limit%).'
+  world_denied_create: '&cNie możesz tworzyć ochrony w tym świecie.'
+  region_overlap: '&cNie możesz postawić tutaj bloku ochrony, ponieważ nakłada się on na inny region.'
+  region_too_close: '&cTwój blok ochrony musi być w odległości minimum %num% bloków od krawędzi innych regionów!'
+  cant_teleport: '&cTwoja teleportacja została zablokowana przez region ochrony!'
+  specify_id_instead_of_alias: |-
+    &7Znaleziono wiele regionów o tej nazwie! Użyj ID zamiast tego.
+     Regiony o tej nazwie: &b%regions%
+  region_not_adjacent: '&cPrzekroczyłeś limit regionów, które nie sąsiadują ze sobą! Spróbuj postawić swój blok ochrony bliżej innych regionów, które już posiadasz.'
+  not_overlapping: '&cTe regiony nie nakładają się na siebie!'
+  multi_region_does_not_exist: Jeden z tych regionów nie istnieje!
+  no_region_holes: '&cWykryto niechroniony obszar wewnątrz regionu! To nie jest dozwolone!'
+  delete_region_prevented: '&7Region nie mógł zostać usunięty, prawdopodobnie dlatego, że stworzyłby dziurę w istniejącym regionie.'
+  not_owner: '&cNie jesteś właścicielem tego regionu!'
+  cannot_merge_rented_region: '&cNie można połączyć regionów, ponieważ region %region% jest w trakcie wynajmowania!'
+  no_permission_region_type: '&cNie masz uprawnień do posiadania tego typu regionu.'
+  hidden: '&7Blok ochrony jest teraz ukryty.'
+  must_be_placed_in_existing_region: '&cTo musi być postawione wewnątrz istniejącego regionu!'
+  already_in_location_is_hidden: '&cRegion już istnieje w tej lokalizacji (czy blok ochrony jest ukryty?)'
+  cannot_remove_yourself_last_owner: '&cNie możesz usunąć siebie, ponieważ jesteś ostatnim właścicielem.'
+  cannot_remove_yourself_all_regions: '&cNie możesz usunąć siebie ze wszystkich swoich regionów naraz, ze względów bezpieczeństwa.'
+toggle:
+  help: '&b> &7/ps toggle|on|off'
+  help_desc: Użyj tej komendy, aby włączyć lub wyłączyć stawianie bloków ochrony.
+  toggle_on: '&bStawianie bloków ochrony zostało włączone.'
+  toggle_off: '&bStawianie bloków ochrony zostało wyłączone.'
+count:
+  count_help: '&b> &7/ps count [gracz (opcjonalnie)]'
+  count_help_desc: Policz liczbę regionów, które posiadasz ty lub inny gracz.
+  personal_region_count: '&7Twoja liczba regionów w tym świecie: &b%num%'
+  personal_region_count_merged: '&7- Włączając każdy połączony region: &b%num%'
+  other_region_count: '&7Liczba regionów gracza %player% w tym świecie: &b%num%'
+  other_region_count_merged: '&7- Włączając każdy połączony region: &b%num%'
+flag:
+  help: '&b> &7/ps flag [nazwaflagr] [wartość|null|default]'
+  help_desc: Użyj tej komendy, aby ustawić flagę w swoim chronionym regionie.
+  flag_set: '&bFlaga &b%flag%&7 została ustawiona.'
+  flag_not_set: '&bFlaga &b%flag%&7 &cnie&7 została ustawiona. Sprawdź swoje wartości ponownie.'
+  flag_prevent_exploit: '&cTo zostało wyłączone, aby zapobiec exploitom.'
+  flag_prevent_exploit_hover: '&cWyłączone ze względów bezpieczeństwa.'
+  gui_header: '&8&m=====&r Flagi (kliknij aby zmienić) &8&m====='
+  gui_hover_set: '&bKliknij aby ustawić.'
+  gui_hover_set_text: |-
+    &bKliknij aby zmienić.&f
+    Obecna wartość:
+    %value%
+  hover_change_group: Kliknij, aby ustawić tę flagę tak, żeby dotyczyła tylko %group%.
+  hover_change_group_null: '&cMusisz najpierw ustawić wartość tej flagi przed zmianą grupy.'
+rent:
+  help: '&b> &7/ps rent'
+  help_desc: Użyj tej komendy do zarządzania wynajmem (kupowaniem i sprzedawaniem).
+  help_header: '&8&m=====&r Pomoc Wynajmu &8&m====='
+  already_renting: '&cRegion jest już wynajmowany! Musisz najpierw zatrzymać wynajem regionu.'
+  not_rented: '&cTen region nie jest wynajmowany.'
+  lease_success: |-
+    &bWartunki wynajmu regionu zostały ustawione:
+    &bCena: &7%price%
+    &bOkres płatności: &7%period%
+  stopped: '&bWynajem zatrzymany.'
+  evicted: '&7Eksmitowano najemcę %tenant%.'
+  not_renting: '&cTen region nie jest wynajmowany najemcom.'
+  paid_landlord: '&b%tenant%&7 zapłacił &b$%price%&7 za wynajem regionu &b%region%&7.'
+  paid_tenant: '&7Zapłacono &b$%price%&7 dla &b%landlord%&7 za region &b%region%&7.'
+  renting_landlord: '&b%player%&7 wynajmuje teraz region &b%region%&7.'
+  renting_tenant: '&7Wynajmujesz teraz region &b%region%&7 za &b%price%&7 na &b%period%&7.'
+  not_tenant: '&cNie jesteś najemcą tego regionu!'
+  tenant_stopped_landlord: '&b%player%&7 przestał wynajmować region &b%region%&7. Jest teraz dostępny dla innych do wynajęcia.'
+  tenant_stopped_tenant: '&bPrzestałeś wynajmować region %region%.'
+  being_sold: '&cRegion jest sprzedawany! Najpierw użyj /ps sell stop.'
+  evict_no_money_tenant: '&7Zostałeś &ceksmitowany&7 z regionu &b%region%&7, ponieważ nie masz wystarczająco pieniędzy (%price%) aby zapłacić za czynsz.'
+  evict_no_money_landlord: '&b%tenant%&7 został &ceksmitowany&7 z regionu &b%region%&7, ponieważ nie może sobie pozwolić na czynsz.'
+  cannot_rent_own_region: '&cNie możesz wynająć swojego własnego regionu!'
+  reached_limit: '&cOsiągnąłeś limit regionów, które możesz wynajmować!'
+  price_too_low: '&cCena wynajmu jest za niska (musi być większa niż %price%).'
+  price_too_high: '&cCena wynajmu jest za wysoka (musi być mniejsza niż %price%).'
+  period_too_short: '&cOkres wynajmu jest za krótki (musi być dłuższy niż %period% sekund).'
+  period_too_long: '&cOkres wynajmu jest za długi (musi być krótszy niż %period% sekund).'
+  period_invalid: '&cNieprawidłowy format okresu! Przykład: 24h oznacza raz dziennie.'
+  cannot_break_while_renting: '&cNie możesz zniszczyć regionu, gdy jest wynajmowany.'
+tax:
+  help: '&b> &7/ps tax'
+  help_desc: Użyj tej komendy do zarządzania podatkami i ich płacenia.
+  help_header: '&8&m=====&r Pomoc Podatkowa &8&m====='
+  disabled_region: '&cPodatki są wyłączone dla tego regionu.'
+  set_as_autopayer: '&7Podatki dla regionu &b%region%&7 będą teraz automatycznie płacone przez ciebie.'
+  set_no_autopayer: '&7Podatki dla regionu &b%region%&7 muszą być teraz płacone ręcznie.'
+  paid: '&7Zapłacono &b$%amount%&7 podatku za region &b%region%&7.'
+  info_header: '&8&m=====&r Informacje Podatkowe (kliknij po więcej info) &8&m====='
+  join_msg_pending_payments: |-
+    &7Masz &b$%money%&7 zaległych płatności podatkowych za swoje regiony!
+    Zobacz je za pomocą /ps tax info.
+  player_region_info: '&7> &b%region%&7 - &3$%money% do zapłaty'
+  player_region_info_autopayer: '&7> &b%region%&7 - &3$%money% do zapłaty&7 (autopłatność)'
+  click_to_show_more_info: Kliknij, aby pokazać więcej informacji.
+  region_info_header: '&8&m=====&r Informacje Podatkowe %region% &8&m====='
+  region_info: |-
+    &9Stawka podatkowa: &7$%taxrate% (suma wszystkich połączonych regionów)
+    &9Czas między cyklami podatkowymi: &7%taxperiod%
+    &9Czas na zapłacenie podatków po cyklu: &7%taxpaymentperiod%
+    &9Autopłatnik podatków: &7%taxautopayer%
+    &9Należny podatek: &7$%taxowed%
+  next_page: '&7Użyj /ps tax info -p %page% aby przejść do następnej strony!'
+buy:
+  help: '&b> &7/ps buy'
+  help_desc: Kup region, w którym się obecnie znajdujesz.
+  not_for_sale: '&cTen region nie jest na sprzedaż.'
+  stop_sell: '&7Region nie jest już na sprzedaż.'
+  sold_buyer: '&7Kupiono region &b%region%&7 za &b$%price%&7 od &b%player%&7.'
+  sold_seller: '&7Sprzedano region &b%region%&7 za &b$%price%&7 graczowi &b%player%&7.'
+sell:
+  help: '&b> &7/ps sell [cena|stop]'
+  help_desc: Sprzedaj region, w którym się obecnie znajdujesz.
+  rented_out: '&cRegion jest wynajmowany! Musisz zatrzymać jego wynajem, aby go sprzedać.'
+  for_sale: '&7Region jest teraz na sprzedaż za &b$%price%&7.'
+visibility:
+  hide_help: '&b> &7/ps hide'
+  hide_help_desc: Użyj tej komendy, aby ukryć lub odkryć swój blok ochrony.
+  unhide_help: '&b> &7/ps unhide'
+  unhide_help_desc: Użyj tej komendy, aby ukryć lub odkryć swój blok ochrony.
+  already_not_hidden: '&7Blok ochrony nie wydaje się być ukryty...'
+  already_hidden: '&7Blok ochrony wydaje się być już ukryty...'
+info:
+  help: '&b> &7/ps info members|owners|flags'
+  help_desc: Użyj tej komendy wewnątrz regionu PS, aby zobaczyć więcej informacji o nim.
+  header: '&8&m=====&r Informacje PS &8&m====='
+  type2: '&9Typ: &7%type%'
+  may_be_merged: (może być połączony z innymi typami)
+  merged2: '&9Połączone regiony: &7%merged%'
+  members2: '&9Członkowie: &7%members%'
+  no_members: '&c(brak członków)'
+  owners2: '&9Właściciele: &7%owners%'
+  no_owners: '&c(brak właścicieli)'
+  flags2: '&9Flagi: &7%flags%'
+  no_flags: (brak)
+  region2: '&9Region: &b%region%'
+  priority2: '&9Priorytet: &b%priority%'
+  parent2: '&9Rodzic: &b%parentregion%'
+  bounds_xyz: '&9Granice: &b(%minx%,%miny%,%minz%) -> (%maxx%,%maxy%,%maxz%)'
+  bounds_xz: '&9Granice: &b(%minx%, %minz%) -> (%maxx%, %maxz%)'
+  seller2: '&9Sprzedawca: &7%seller%'
+  price2: '&9Cena: &7%price%'
+  tenant2: '&9Najemca: &7%tenant%'
+  landlord2: '&9Właściciel: &7%landlord%'
+  rent2: '&9Czynsz: &7%rent%'
+  available_for_sale: '&bRegion dostępny na sprzedaż!'
+  available_for_rent: '&bRegion dostępny do wynajęcia!'
+priority:
+  help: '&b> &7/ps priority [liczba|null]'
+  help_desc: Użyj tej komendy, aby ustawić priorytet swojego regionu.
+  info: '&7Priorytet: %priority%'
+  set: '&ePriorytet został ustawiony.'
+  error: '&cBłąd parsowania danych, sprawdź je ponownie?'
+region:
+  help: '&b> &7/ps region [list|remove|disown] [nazwagracza]'
+  help_desc: Użyj tej komendy, aby znaleźć informacje lub edytować chronione regiony innych graczy (lub swoje własne).
+  not_found_for_player: '&7Nie znaleziono regionów dla %player% w tym świecie.'
+  list: '&7Regiony gracza %player% w tym świecie: &b%regions%'
+  remove: '&eRegiony gracza %player% zostały usunięte w tym świecie, i został on usunięty z regionów, które współposiadał.'
+  disown: '&eGracz %player% został usunięty jako właściciel ze wszystkich regionów w tym świecie.'
+  error_search: '&cBłąd podczas wyszukiwania regionów gracza %player%. Upewnij się, że wpisałeś prawidłową nazwę.'
+tp:
+  help: '&b> &7/ps tp [id/gracz] [numer (opcjonalnie)]'
+  help_desc: Teleportuje cię do jednego z regionów danego gracza.
+  number_above_zero: '&cProszę podaj liczbę większą od 0.'
+  valid_number: '&cProszę podaj prawidłową liczbę.'
+  only_has_regions: '&cGracz %player% ma tylko %num% chronionych regionów w tym świecie!'
+  tping: '&aTeleportowanie...'
+  error_name: '&cBłąd w teleportacji do chronionego regionu! (błąd parsowania nazwy regionu WG)'
+  error_tp: '&cBłąd w znalezieniu regionu do teleportacji!'
+  in_seconds: '&7Teleportacja za &b%seconds%&7 sekund.'
+  cancelled_moved: '&cTeleportacja anulowana. Się poruszyłeś!'
+home:
+  help: '&b> &7/ps home [nazwa/id]'
+  help_desc: Teleportuje cię do jednego z twoich chronionych regionów.
+  header: '&8&m=====&r Domy (kliknij aby się teleportować) &8&m====='
+  click_to_tp: Kliknij aby się teleportować!
+  next_page: '&7Użyj /ps home -p %page% aby przejść do następnej strony!'
+unclaim:
+  help: '&b> &7/ps unclaim'
+  help_desc: Użyj tej komendy, aby podnieść postawiony blok ochrony i usunąć region.
+  header: '&8&m=====&r Anuluj Ochronę (kliknij aby anulować) &8&m====='
+view:
+  help: '&b> &7/ps view'
+  help_desc: Użyj tej komendy, aby zobaczyć granice chronionego regionu.
+  cooldown: '&cPoczekaj chwilę przed ponownym użyciem /ps view.'
+  generating: '&7Generowanie granic...'
+  generate_done: '&aGotowe! Granice znikną po 30 sekundach!'
+  removing: |-
+    &bUsuwanie granic...
+    &aJeśli nadal widzisz bloki-duchy, przeloguj się!
+admin:
+  help: '&b> &7/ps admin'
+  help_desc: Użyj /ps admin help po więcej informacji.
+  cleanup_header: |-
+    &eCzyszczenie %arg% %days% dni
+    ================
+  cleanup_footer: |-
+    &e================
+    Ukończono czyszczenie %arg%.
+  hide_toggled: '&eWszystkie bloki ochrony zostały %message% w tym świecie.'
+  last_logon: '&eGracz %player% grał ostatnio %days% dni temu.'
+  is_banned: '&eGracz %player% jest zbanowany.'
+  error_parsing: '&cBłąd parsowania dni, czy jesteś pewien, że to liczba?'
+  console_world: '&cProszę podaj świat jako ostatni parametr.'
+  lastlogons_header: |-
+    &e%days% Dni Plus:
+    ================
+  lastlogons_line: '&e%player% %time% dni'
+  lastlogons_footer: |-
+    &e================
+    %count% Łącznie Pokazanych Graczy
+    %checked% Łącznie Sprawdzonych Graczy
+reload:
+  help: '&b> &7/ps reload'
+  help_desc: Przeładuj ustawienia z konfiguracji.
+  start: '&bPrzeładowywanie konfiguracji...'
+  complete: '&bUkończono przeładowanie konfiguracji!'
+addremove:
+  help: '&b> &7/ps add|remove [nazwagracza]'
+  help_desc: Użyj tej komendy, aby dodać lub usunąć członka swojego chronionego regionu.
+  owner_help: '&b> &7/ps addowner|removeowner [nazwagracza]'
+  owner_help_desc: Użyj tej komendy, aby dodać lub usunąć właściciela swojego chronionego regionu.
+  player_reached_limit: '&cTen gracz osiągnął swój limit regionów.'
+  player_needs_to_be_online: '&cGracz musi być online, aby go dodać.'
+get:
+  help: '&b> &7/ps get [blok]'
+  help_desc: Użyj tej komendy, aby otrzymać lub kupić blok ochrony.
+  gotten: '&bDodano blok ochrony do ekwipunku!'
+  no_permission_block: '&cNie masz uprawnień do otrzymania tego bloku.'
+  header: '&8&m=====&r Bloki Ochrony (kliknij aby otrzymać) &8&m====='
+  gui_block: '&7> &b%alias% &7- %description% (&f$%price%&7)'
+  gui_hover: Kliknij aby kupić %alias%!
+give:
+  help: '&b> &7/ps give [blok] [gracz] [ilość (opcjonalnie)]'
+  help_desc: Użyj tej komendy, aby dać graczowi blok ochrony.
+  given: '&7Dano &b%block%&7 graczowi &b%player%&7.'
+  no_inventory_room: '&cGracz nie ma wystarczająco miejsca w ekwipunku.'
+sethome:
+  help: '&b> &7/ps sethome'
+  help_desc: Użyj tej komendy, aby ustawić dom regionu w miejscu, gdzie się obecnie znajdujesz.
+  set: '&7Dom dla &b%psid%&7 został ustawiony na twoją lokalizację.'
+list:
+  help: '&b> &7/ps list [gracz (opcjonalnie)]'
+  help_desc: Użyj tej komendy, aby wymienić regiony, które posiadasz ty lub inny gracz.
+  header: '&8&m=====&r Regiony gracza %player% &8&m====='
+  owner: '&7Właściciel:'
+  member: '&7Członek:'
+  no_regions: '&7Obecnie nie posiadasz i nie jesteś członkiem żadnych regionów.'
+  no_regions_player: '&bGracz %player% &7nie posiada i nie jest członkiem żadnych regionów.'
+name:
+  help: '&b> &7/ps name [nazwa|none]'
+  help_desc: Użyj tej komendy, aby nadać pseudonim swojemu regionowi, aby łatwiej go identyfikować.
+  removed: '&7Usunięto nazwę dla %id%.'
+  set_name: '&7Ustawiono nazwę %id% na &b%name%&7.'
+  taken: '&7Nazwa regionu &b%name%&7 została już zajęta! Spróbuj innej.'
+setparent:
+  help: '&b> &7/ps setparent [region|none]'
+  help_desc: Użyj tej komendy, aby pozwolić temu regionowi dziedziczyć właściwości z innego regionu (właściciele, członkowie, flagi, itp.).
+  success: '&7Pomyślnie ustawiono rodzica &b%id%&7 na &b%parent%&7.'
+  success_remove: '&7Pomyślnie usunięto rodzica &b%id%&7.'
+  circular_inheritance: '&cWykryto cykliczne dziedziczenie (rodzic już dziedziczy z tego regionu?). Rodzic nie został ustawiony.'
+merge:
+  help: '&b> &7/ps merge'
+  help_desc: Użyj tej komendy, aby połączyć region, w którym się znajdujesz, z innymi nakładającymi się regionami.
+  disabled: Łączenie regionów jest wyłączone w konfiguracji!
+  merged: '&bRegiony zostały pomyślnie połączone!'
+  header: '&8&m=====&r Połącz %region% (kliknij aby połączyć) &8&m====='
+  warning: '&7Uwaga: To usunie wszystkie ustawienia obecnego regionu!'
+  not_allowed: '&cNie masz uprawnień do łączenia tego typu regionu ochrony.'
+  into: '&bTen region nakłada się na inne regiony, z którymi możesz się połączyć!'
+  no_region: '&7Nie ma nakładających się regionów do połączenia.'
+  click_to_merge: Kliknij aby połączyć z %region%!
+  auto_merged: '&7Region automatycznie połączony z &b%region%&7.'
+  

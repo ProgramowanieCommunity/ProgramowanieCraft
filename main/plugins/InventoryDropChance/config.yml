@@ -1,0 +1,14 @@
+ignoredWorlds:
+- exampleWorld
+- exampleWorld2
+
+# If true, a chance to save item will be ignored if item has Curse of Vanishing
+skipCurseOfVanishingItems: false
+# If true, a drop chance will be applied to the all items in same stack, else each item in one stack will have individual chance
+applyChanceToItemStack: false
+# If true, the plugin will overwrite the existing lore of the item, else it will append the lore
+overwriteLore: true
+# If true, the plugin will inverse the chance number that will added to the lore
+inverseLoreChance: false
+enableScrolls: true
+ignorePermissions: false

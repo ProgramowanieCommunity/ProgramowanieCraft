@@ -1,0 +1,38 @@
+
+# Messages use MiniMessage formatting (https://docs.adventure.kyori.net/minimessage/format)
+messages:
+  prefix: '' #'CommandWhitelist > '
+  command_denied: <red>Nie ma takiej komendy. # No such command.
+  subcommand_denied: <red>Nie możesz użyć tej subkomendy. # You cannot use this subcommand
+  no_permission: <red>Nie masz uprawnień, by użyć tej komendy. # <red>You don't have permission to do this.
+  no_such_subcommand: <red>Nie ma takiej subkomendy. # <red>No subcommand by that name.
+  config_reloaded: <yellow>Configuration reloaded.
+  added_to_whitelist: <yellow>Whitelisted command <gold>%s <yellow>for permission
+    <gold>%s
+  removed_from_whitelist: <yellow>Removed command <gold>%s <yellow>from permission
+    <gold>%s
+  group_doesnt_exist: <red>Group doesn't exist or error occured
+  
+message_type: CHAT
+groups:
+  default:
+    commands:
+    - login
+    - register
+    - skin
+    - msg
+    # - msg
+    # - tpdeny
+    # - tpa
+    # - pay
+    # - bal
+    # - baltop
+    # - tpahere
+    # - tpaccept
+    # - help
+    # - r
+    # - spawn
+    # - balance
+    # - warp
+    subcommands:
+    # - help about

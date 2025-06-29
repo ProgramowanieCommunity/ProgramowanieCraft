@@ -1,0 +1,184 @@
+settings:
+  # Extra logger/console output. (can be spammy)
+  debug-mode: false
+  # The language file to use from the locale folder.
+  language-file: lang-pl.yml
+  # Set the web address players use to connect to your map. This
+  # is only used for the client mod to know where to connect.
+  web-address: https://mc.programowanie.org
+  web-directory:
+    # The directory that houses the website and world tiles.
+    # This is a relative path from Pl3xMap's plugin directory,
+    # unless it starts with / in which case it will be treated
+    # as an absolute path.
+    path: web/
+    # Set to true if you don't want Pl3xMap to overwrite
+    # the website files on startup. (Good for servers that
+    # customize these files)
+    # Note: Be sure this is false when upgrading.
+    read-only: false
+    # The image format for tile images.
+    # Built in types: bmp, gif, jpg, jpeg, png
+    tile-format: png
+    # The quality for image tiles (0.0 - 1.0)
+    # 0.0 is low quality, high compression, small file size
+    # 1.0 is high quality, no compression, large file size
+    # Note: Not all image formats honor this setting.
+    tile-quality: 0.0
+  map:
+    zoom:
+      # Forces the map's zoom level to always be a multiple of this.
+      # By default, the zoom level snaps to the nearest integer; lower
+      # values (e.g. 0.5 or 0.1) allow for greater granularity. A
+      # value of 0 means the zoom level will not be snapped.
+      snap: 0.25
+      # Controls how much the map's zoom level will change after a zoom in,
+      # zoom out, pressing + or - on the keyboard, or using the zoom controls.
+      # Values smaller than 1 (e.g. 0.5) allow for greater granularity.
+      delta: 0.25
+      # How many scroll pixels (as reported by L.DomEvent.getWheelDelta) mean
+      # a change of one full zoom level. Smaller values will make wheel-zooming
+      # faster (and vice versa).
+      wheel: 120
+  internal-webserver:
+    # Enable the built-in web server.
+    # Disable this if you want to use a standalone web server
+    # such as apache or nginx.
+    enabled: true
+    # The interface the built-in web server should bind to.
+    # This is NOT always the same as your public facing IP.
+    # If you don't understand what this is,
+    # leave it set to 0.0.0.0
+    bind: 0.0.0.0
+    # The port the built-in web server listens to.
+    # Make sure the port is allocated if using Pterodactyl.
+    port: 8080
+    # Allows the built-in web server to follow symlinks.
+    # It is generally advised against enabling this,
+    # for security reasons. But you do you, boo boo.
+    follow-symlinks: false
+  performance:
+    live-update:
+      # Whether or not the real-time marker system should run.
+      enabled: true
+      # The number of process-threads to use for real-time marker updates on the map.
+      # Value of -1 will use 50% of the available cpu-threads. (recommended)
+      threads: -1
+    # The number of process-threads to use for loading and scanning chunks.
+    # Value of -1 will use 50% of the available cpu-threads. (recommended)
+    render-threads: -1
+    gc:
+      # Runs the JVM GC after a render job stops to free up memory immediately.
+      when-finished: true
+      # Runs the JVM GC aggressively while a render is running
+      # CAUTION: this _will_ slow down your renders!
+      when-running: false
+world-settings:
+  default:
+    # Enables this world to be rendered on the map.
+    enabled: true
+    render:
+      # Renderers to use. Each renderer will render a different type of map. The value is the icon
+      # that the renderer should use in the Web UI. These are any "*.png" files under "web/images/icon/"
+      # 
+      # The built-in renderers include (key):
+      # vintage_story, basic, biomes, flowermap, inhabited, night, nether_roof, and vanilla
+      # 
+      # The built-in icons include (value):
+      # overworld_basic, overworld_biomes, overworld_night,
+      # nether_basic, nether_biomes, nether_night, nether_roof,
+      # the_end_basic, the_end_biomes, the_end_night,
+      # flowermap, inhabited, vanilla
+      renderers:
+        vintage_story: overworld_basic
+      # World skylight value. This is used for the day/night cycle
+      # map (not yet implemented) .Values are clamped to 0-15
+      # with 0 being darkest and 15 being full bright.
+      skylight: 15
+      # Enables blending of biome grass/foliage/water colors similar to
+      # the client's biome blending option.
+      # Values are clamped to 0-7
+      biome-blend: 3
+      # Enable translucent fluids.
+      # This will make the fluids look fancier and translucent,
+      # so you can see the blocks below in shallow fluids.
+      translucent-fluids: true
+      # Enable translucent glass.
+      # This will make the glass look fancier and translucent,
+      # so you can see the blocks below.
+      translucent-glass: true
+      # Type of heightmap to render.
+      # NONE has no heightmap drawn.
+      # EVEN_ODD makes every other Y layer darker, like Dynmap.
+      # HIGH_CONTRAST same as MODERN, but darker.
+      # LOW_CONTRAST same as MODERN, but lighter.
+      # MODERN is a clearer, more detailed view.
+      # OLD_SCHOOL is the old type from v1.
+      # VANILLA matches the in-game vanilla maps.
+      # EVEN_ODD_HIGH_CONTRAST mix of EVEN_ODD and HIGH_CONTRAST.
+      # EVEN_ODD_LOW_CONTRAST mix of EVEN_ODD and LOW_CONTRAST.
+      # EVEN_ODD_MODERN mix of EVEN_ODD and MODERN.
+      # EVEN_ODD_OLD_SCHOOL mix of EVEN_ODD and OLD_SCHOOL.
+      # EVEN_ODD_VANILLA mix of EVEN_ODD and VANILLA.
+      heightmap-type: MODERN
+      # Visible areas of the world.
+      visible-areas:
+        - type: world-border
+    ui:
+      # The display name of the world in the world list.
+      # Use <world> to use the official world name.
+      display-name: <world>
+      # The order of the world in the world list
+      order: 0
+      # Shows the footer attributes
+      attribution: true
+      # The display position for the blockinfo box
+      blockinfo: bottomleft
+      # The display position for the coordinates box
+      coords: bottomcenter
+      # The display position for the link box
+      link: bottomright
+    center:
+      # The x coordinate for the map to load at.
+      # A value of -1 will default to world spawn.
+      x: -1
+      # The z coordinate for the map to load at.
+      # A value of -1 will default to world spawn.
+      z: -1
+    zoom:
+      # The default zoom when loading the map in browser.
+      # Normal sized tiles (1 pixel = 1 block) are
+      # always at zoom level 0.
+      default: 0
+      # The maximum zoom out you can do on the map.
+      # Each additional level requires a new set of tiles
+      # to be rendered, so don't go too wild here.
+      max-out: 3
+      # Extra zoom in layers will stretch the original
+      # tile images so you can zoom in further without
+      # the extra cost of rendering more tiles.
+      max-in: 2
+  world:
+    enabled: true
+    render:
+      renderers:
+        vintage_story: overworld_basic
+    ui:
+      display-name: Overworld
+      order: 0
+  world_nether:
+    render:
+      renderers:
+        basic: nether_basic
+      skylight: 0
+    ui:
+      display-name: The Nether
+      order: 1
+  world_the_end:
+    render:
+      renderers:
+        basic: the_end_basic
+      skylight: 0
+    ui:
+      display-name: The End
+      order: 2

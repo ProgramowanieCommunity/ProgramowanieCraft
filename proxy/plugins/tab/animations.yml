@@ -1,0 +1,112 @@
+MyAnimation1:
+  change-interval: 100
+  texts:
+    - '&d-&3--------------'
+    - '&3-&d-&3-------------'
+    - '&3--&d-&3------------'
+    - '&3---&d-&3-----------'
+    - '&3----&d-&3----------'
+    - '&3-----&d-&3---------'
+    - '&3------&d-&3--------'
+    - '&3-------&d-&3-------'
+    - '&3--------&d-&3------'
+    - '&3---------&d-&3-----'
+    - '&3----------&d-&3----'
+    - '&3-----------&d-&3---'
+    - '&3------------&d-&3--'
+    - '&3-------------&d-&3-'
+    - '&3--------------&d-'
+    - '&3-------------&d-&3-'
+    - '&3------------&d-&3--'
+    - '&3-----------&d-&3---'
+    - '&3----------&d-&3----'
+    - '&3---------&d-&3-----'
+    - '&3--------&d-&3------'
+    - '&3-------&d-&3-------'
+    - '&3------&d-&3--------'
+    - '&3-----&d-&3---------'
+    - '&3----&d-&3----------'
+    - '&3---&d-&3-----------'
+    - '&3--&d-&3------------'
+    - '&3-&d-&3-------------'
+    - '&d-&3--------------'
+ServerName:
+  change-interval: 300
+  texts:
+  - '&c&lServerName'
+  - '&c&n&lServerName'
+  - '&b&lServerName'
+  - '&b&l&nServerName'
+  - '&e&lServerName'
+  - '&e&n&lServerName'
+web:
+  change-interval: 200
+  texts:
+  - '&emc.programowanie.org'
+  - '&emc.programowanie.org'
+  - '&emc.programowanie.org'
+  - '&emc.programowanie.org'
+  - '&emc.programowanie.org'
+  - '&emc.programowanie.org'
+  - '&6m&ec.programowanie.org'
+  - '&em&6c&e.programowanie.org'
+  - '&emc&6.&eprogramowanie.org'
+  - '&emc.&6p&erogramowanie.org'
+  - '&emc.p&6r&eogramowanie.org'
+  - '&emc.pr&6o&egramowanie.org'
+  - '&emc.pro&6g&eramowanie.org'
+  - '&emc.prog&6r&eamowanie.org'
+  - '&emc.progr&6a&emowanie.org'
+  - '&emc.progra&6m&eowanie.org'
+  - '&emc.program&6o&ewanie.org'
+  - '&emc.programo&6w&eanie.org'
+  - '&emc.programow&6a&enie.org'
+  - '&emc.programowa&6n&eie.org'
+  - '&emc.programowan&6i&ee.org'
+  - '&emc.programowani&6e&e.org'
+  - '&emc.programowanie&6.&eorg'
+  - '&emc.programowanie.&6o&erg'
+  - '&emc.programowanie.o&6r&eg'
+  - '&emc.programowanie.or&6g'
+  - '&emc.programowanie.org'
+  - '&emc.programowanie.org'
+  - '&emc.programowanie.org'
+  - '&emc.programowanie.org'
+  - '&emc.programowanie.org'
+  - '&emc.programowanie.org'
+vote:
+  change-interval: 1000
+  texts:
+  - '&avote.domain.com'
+  - '&a&nvote.domain.com'
+  - '&5vote.domain.com'
+  - '&5&nvote.domain.com'
+Welcome:
+  change-interval: 400
+  texts:
+  - '&7&lW_'
+  - '&7&lW_'
+  - '&7&lWi_'
+  - '&7&lWit_'
+  - '&7&lWita_'
+  - '&7&lWitaj_'
+  - '&7&lWitaj_'
+  - '&7&lWitaj_'
+  - '&7&lWitaj_'
+  - '&7&lWita_'
+  - '&7&lWit_'
+  - '&7&lWi_'
+  - '&7&lW_'
+  - '&7&lW_'
+time:
+  change-interval: 3000
+  texts:
+    - '&7Godzina: &b%time%'
+    - '&7Data: &b%date%'
+barcolors:
+  change-interval: 1000
+  texts:
+    - RED
+    - BLUE
+    - GREEN
+    - YELLOW

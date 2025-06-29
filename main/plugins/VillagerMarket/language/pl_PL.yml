@@ -1,0 +1,850 @@
+#----------------------- Ogólne -----------------------#
+
+#Lokalizacja czasu
+time:
+  seconds: sekund
+  minutes: minut
+  minute: minutę
+  hours: godzin
+  hour: godzinę
+  days: dni
+  day: dzień
+  never: nigdy
+  indefinitely: bezterminowo
+  less_than_a_minute: Mniej niż minutę
+
+#Lokalizacja ilości
+quantity:
+  free: darmowe
+  infinite: nieskończone
+  unlimited: nieograniczone
+
+#Status mieszkańca (Używane dla zmiennych PAPI)
+status:
+  available: '&aDostępny'
+  bought: '&cZakupiony'
+  no_owner: '&7Brak'
+
+#Ustawienia nazwy mieszkańca
+villager:
+  name_admin: '&cSklep Administratora'
+  name_available: '&aDostępny sklep!'
+  name_taken: '&bSklep gracza %player%'
+
+
+#----------------------- Wiadomości -----------------------#
+
+messages:
+  invalid_command_usage: '&cNieprawidłowe użycie komendy! Użyj &e/vm help'
+  reloaded: '&aPlugin został przeładowany.'
+  cancelled: '&cAkcja została anulowana!'
+  not_number: '&cMusisz wpisać liczbę!'
+  use_dot: '&cUżyj kropki zamiast przecinka dla liczb dziesiętnych!'
+  not_valid_range: '&cIlość musi być między 1 a 64!'
+  amount_successful: '&aIlość została ustawiona pomyślnie.'
+  price_successful: '&aCena została ustawiona pomyślnie.'
+  negative_price: '&cCena nie może być ujemna!'
+  add_successful: '&aPrzedmiot został dodany pomyślnie.'
+  type_price: '&bWpisz cenę przedmiotu na czacie...'
+  type_amount: '&bWpisz ilość, którą chcesz sprzedać/kupić na czacie...'
+  #Zmienna: %cancel% (zobacz opcję anulowania powyżej)
+  type_cancel: '&bLub napisz &c%cancel% &baby anulować'
+  sold_shop: '&bSklep sprzedany! Jest teraz dostępny do zakupu.'
+  not_enough_money: '&cMasz za mało diamentów, aby to kupić!'
+  not_enough_stock: '&cW tej chwili nie ma wystarczającej ilości przedmiotów w magazynie!'
+  remove_villager: '&cKliknij prawym przyciskiem &bSklep Mieszkańca &cktóry chcesz usunąć...'
+  no_villager_shop: '&cTo nie jest Sklep Mieszkańca!'
+  villager_removed: '&cSklep Mieszkańca został usunięty!'
+  blacklisted: '&cTen przedmiot jest na czarnej liście!'
+  owner_not_enough_money: '&cWłaściciel sklepu ma za mało diamentów!'
+  not_enough_in_inventory: '&cNie masz wystarczającej ilości przedmiotów w ekwipunku!'
+  #Zmienne: %player%, %amount%, %item%, %price%
+  bought_item_as_owner: '&b%player%&7 sprzedał ci &b%amount%x %item%&7 za &a%price%&7.'
+  #Zmienne: %player%, %amount%, %material%, %price%
+  sold_item_as_owner: '&b%player%&7 kupił od ciebie &b%amount%x %item%&7 za &a%price%&7.'
+  change_name: '&bWpisz nazwę sklepu na czacie...'
+  change_name_set: '&aPomyślnie ustawiono nazwę na: &r%name%&a.'
+  must_be_menulore: '&cPrzełącz z powrotem na &e&nopis menu&c aby sprzedawać/kupować przedmioty!'
+  cannot_buy_from_yourself: '&cNie możesz kupować przedmiotów od siebie!'
+  cannot_sell_to_yourself: '&cNie możesz sprzedawać przedmiotów sobie!'
+  tax: '&a%tax% &7zostało pobrane jako podatek.'
+  expired: '&cTwój sklep wygasł! Wszystkie przedmioty z magazynu można odzyskać używając &e/vm expiredstorage&7.'
+  move_villager: '&7Kliknij prawym przyciskiem &bSklep Mieszkańca &7który chcesz przenieść.'
+  move_villager_to: '&7Kliknij na blok, na który chcesz przenieść &bSklep Mieszkańca&7.'
+  max_rent_time: '&cNie można dalej zwiększać czasu. Maksymalny czas wynajmu został osiągnięty!'
+  search_result: '&7Znaleziono &b%amount% &7Sklepów Mieszkańców w pobliżu.'
+  search_shop_info: '&7>> %name% &7w lokalizacji: &c%location%'
+  get_stats: '&7Kliknij prawym przyciskiem &bSklep Mieszkańca &7aby otrzymać statystyki.'
+  not_owner: '&cNie jesteś właścicielem tego Sklepu Mieszkańca!'
+  type_limit_player: '&bWpisz maksymalną ilość, którą chcesz kupić na czacie (&c0 &bdla nieograniczonej)...'
+  type_limit_admin: '&bWpisz limit kupna/sprzedaży dla tego przedmiotu na czacie (&c0 &bdla nieograniczonego)...'
+  reached_sell_limit: '&cNie możesz sprzedać więcej tego przedmiotu!'
+  reached_buy_limit: '&cNie możesz kupić więcej tego przedmiotu!'
+  reached_command_limit: '&cOsiągnąłeś limit kupna dla tej komendy!'
+  money_left: '&aZostało ci %amount%.'
+  money_currently: '&aObecnie masz %amount%.'
+  type_command: '&bWpisz komendę bez ''/'' (%player% jako zmienna)...'
+  finish_process: '&cPierw zakończ proces dodawania przedmiotu do sklepu! (Napisz ''cancel'' aby anulować)'
+  collected_money: '&bZebrano &a%amount%.'
+  not_playershop: '&cTo nie jest Sklep Gracza!'
+  add_trusted: '&7Kliknij na &bSklep Mieszkańca &7którego posiadasz aby &adadać &7zaufanego'
+  remove_trusted: '&7Kliknij na &bSklep Mieszkańca &7którego posiadasz aby &cusunąć &7zaufanego'
+  trusted_added: '&aGracz został dodany.'
+  trusted_removed: '&cGracz został usunięty!'
+  region_no_access: '&cNie masz dostępu do tego regionu!'
+  no_permission_adminshop: '&cNie masz uprawnień do używania tego Sklepu Administratora!'
+  no_permission_playershop: '&cNie masz uprawnień do kupowania tego Sklepu Gracza!'
+  no_permission_change_name: '&cNie masz uprawnień do zmiany nazwy!'
+  no_permission_command: '&cNie masz uprawnień do używania tej komendy!'
+  no_permission_buy_shop: '&cNie masz uprawnień do kupowania sklepów!'
+  no_permission_use_item: '&cNie masz uprawnień do używania tego przedmiotu!'
+  no_permission_citizens: '&cNie masz uprawnień do przekształcenia sklepu w NPC!'
+  no_permission_trade_item: '&cNie masz uprawnień do handlowania przedmiotami!'
+  max_shops: '&cPosiadasz już &e%current%&c/&e%max%&c dostępnych sklepów!'
+  get_id: '&7Kliknij prawym przyciskiem &bSklep Mieszkańca &7aby otrzymać jego ID!'
+  #Zmienne: %id%
+  id: '&7UUID jednostki: &b%id%'
+  type_skin: '&bWpisz nazwę skina na czacie...'
+  skin_set: '&aSkin został pomyślnie ustawiony.'
+  no_expired_storage: '&cNie masz wygasłego magazynu!'
+  type_limit_cooldown: '&bWpisz cooldown limitu na czacie (2h, 1d, itp.) lub ''never'' dla braku limitu...'
+  limit_cooldown_set: '&aCooldown limitu handlu ustawiony na &e%time%'
+  limits_cleared: '&cLimity zostały wyczyszczone!'
+  name_blacklisted: '&cNie możesz używać tej nazwy sklepu!'
+  max_item_price: '&cCena przedmiotu zbyt wysoka! Spróbuj ponownie z niższą ceną.'
+  shopfront_cooldown: '&cPoczekaj przed następnym kupnem/sprzedażą!'
+  max_name_length: '&cTa nazwa jest zbyt długa! Maksymalna długość nazwy to %limit% znaków.'
+  clone_shop: '&7Kliknij prawym przyciskiem &bSklep Mieszkańca &7który chcesz sklonować.'
+  shop_cloned: '&aSklep Mieszkańca został pomyślnie sklonowany. Przenieś go używając &e/vm move&a.'
+  set_size: '&7Kliknij prawym przyciskiem &bSklep Mieszkańca &7dla którego chcesz ustawić rozmiar.'
+  size_set: '&aRozmiar ustawiony na &e%size%&a.'
+  #Zmienne: %amount%, %item%, %price%, %shop%
+  bought_item_as_customer: '&7Kupiłeś &b%amount%x %item%&7 za &a%price%&7 od &r%shop%.'
+  #Zmienne: %amount%, %item%, %price%, %shop%
+  sold_item_as_customer: '&7Sprzedałeś &b%amount%x %item%&7 za &a%price%&7 do &r%shop%.'
+  type_discount: '&bWpisz zniżkę (0-100) na czacie...'
+  type_time: '&bWpisz czas (2h, 1d, itp.) na czacie...'
+  not_valid_time: '&cNieprawidłowy czas! Czas musi zaczynać się od liczby i kończyć na h, d lub m.'
+  #Zmienne: %shop_name%, %discount%, %item%
+  discount_announcement: '&e%shop_name% &ama teraz &e%discount%% &azniżki na &e%item%&a!'
+  toggle_require_permission: '&7Kliknij prawym przyciskiem &bSklep Mieszkańca &7dla którego chcesz przełączyć wymaganie uprawnień.'
+  require_permission_enabled: '&aWymaganie uprawnień włączone. Uprawnienie: &e%permission%'
+  require_permission_disabled: '&cWymaganie uprawnień wyłączone.'
+
+stats_message:
+- '&bStatystyki Sklepu Mieszkańca:'
+- '&7>> Sprzedane przedmioty: &a%items_sold%'
+- '&7>> Kupione przedmioty: &a%items_bought%'
+- '&7>> Zarobione diamenty: &a%money_earned%'
+- '&7>> Wydane diamenty: &a%money_spent%'
+
+
+#--------------------- Ustawienia przedmiotów menu ---------------------#
+
+items:
+  back:
+    name: '&c&lPowrót'
+    material: ARROW
+  filler:
+    name: ''
+    material: GRAY_STAINED_GLASS_PANE
+  next:
+    name: '&eNastępna strona'
+    material: FEATHER
+    lore:
+    - '&7Następna strona'
+  previous:
+    name: '&ePoprzednia strona'
+    material: FEATHER
+    lore:
+    - '&7Poprzednia strona'
+
+#----------------------- Ustawienia menu -----------------------#
+
+menus:
+  #-------------------- Kup Sklep --------------------#
+  buy_shop:
+    title: '&8Kup dostępny sklep'
+    size: 27
+    filler_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    items:
+      shop_size:
+        material: CHEST
+        slot: 12
+        #Zmienne: %amount%
+        name: '&a%amount%&7 slotów sklepu'
+        lore:
+        - ''
+      storage_size:
+        material: WRITABLE_BOOK
+        slot: 14
+        #Zmienne: %amount%
+        name: '&a%amount%&7 slotów magazynu'
+        lore:
+        - ''
+      buy_shop:
+        material: EMERALD
+        slot: 13
+        name: '&aKup ten sklep!'
+        lore:
+        - '&7Kliknij aby kupić ten sklep za &a%price%&7!'
+        - ''
+        - '&7Sklep będzie twój'
+        - '&7przez &b%time%&7!'
+  
+  #-------------------- Edytuj Sklep --------------------#
+  edit_shop:
+    title: '&8Edytuj sklep'
+    size: 54
+    filler_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 17
+    - 18
+    - 26
+    - 27
+    - 35
+    - 36
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+    items:
+      #Edytuj przedmioty na sprzedaż
+      edit_shopfront:
+        material: WRITABLE_BOOK
+        slot: 21
+        slot_admin: 21
+        name: '&bEdytuj wystawę sklepu'
+        lore:
+        - '&7Kliknij aby edytować przedmioty'
+        - '&7na sprzedaż w twoim sklepie'
+      #Podgląd sklepu
+      preview_shop:
+        material: BOOK
+        slot: 23
+        slot_admin: 23
+        name: '&ePodgląd sklepu'
+        lore:
+        - '&7Kliknij aby zobaczyć podgląd twojego sklepu'
+      #Edytuj magazyn
+      edit_storage:
+        material: CHEST
+        slot: 22
+        name: '&cEdytuj magazyn'
+        lore:
+        - '&7Kliknij aby edytować magazyn sklepu'
+      #Edytuj mieszkańca
+      edit_villager:
+        material: VILLAGER_SPAWN_EGG
+        slot: 30
+        slot_admin: 30
+        name: '&eEdytuj mieszkańca'
+        lore:
+        - '&7Kliknij aby edytować profesję'
+        - '&7twojego mieszkańca'
+      #Zmień nazwę mieszkańca
+      change_name:
+        material: NAME_TAG
+        slot: 32
+        slot_admin: 32
+        name: '&eZmień nazwę mieszkańca'
+        lore:
+        - '&7Kliknij aby zmienić nazwę twojego mieszkańca'
+      #Sprzedaj sklep
+      sell_shop:
+        material: FEATHER
+        slot: 31
+        name: '&cSprzedaj/porzuć sklep'
+        lore:
+        - '&7Kliknij aby porzucić ten'
+        - '&7Sklep Mieszkańca!'
+      #Zbierz pieniądze (musi być włączone w głównych ustawieniach)
+      collect_money:
+        material: GOLD_INGOT
+        slot: 41
+        name: '&aZbierz diamenty'
+        #Zmienne: %worth%
+        lore:
+        - '&7Kliknij aby zebrać &a%worth%$'
+      #Dodaj więcej czasu
+      increase_time:
+        material: EMERALD
+        slot: 13
+        name: '&aZwiększ czas wynajmu'
+        #Zmienne: %expire%, %time%, %price%
+        lore:
+        - '&7Twój sklep wygaśnie za: &e%expire%'
+        - ''
+        - '&7Kliknij aby zwiększyć czas'
+        - '&7wynajmu o &b%time%&7 za &a%price%&7!'
+      #Włącz powiadomienia o handlu
+      enable_trade_notifications:
+        material: RED_TERRACOTTA
+        slot: 40
+        name: '&ePowiadomienia o handlu&7: &cWyłączone'
+        lore:
+        - '&7Kliknij aby włączyć powiadomienia o handlu'
+      #Wyłącz powiadomienia o handlu
+      disable_trade_notifications:
+        material: LIME_TERRACOTTA
+        slot: 40
+        name: '&ePowiadomienia o handlu&7: &aWłączone'
+        lore:
+        - '&7Kliknij aby wyłączyć powiadomienia o handlu'
+  
+  #-------------------- Wystawa Sklepu --------------------#
+  shopfront:
+    title: '&7%shop%'
+    #Zmienne: %item_name%, %mode%
+    item_name: '&f%item_name% %mode%'
+    detail_suffix: '&8(Szczegóły)'
+    #Cooldown między sprzedażą/kupnem przedmiotów (milisekundy)
+    cooldown: 500
+    items:
+      toggle_details:
+        name: '&ePrzełącz szczegóły'
+        material: BOOK
+        lore:
+        - '&7>> Lewy przycisk myszy aby przełączyć'
+        - '&7między &eopisem przedmiotu'
+        - '&7a &eopisem menu&7!'
+        - ''
+        - '&7>> Prawy przycisk myszy &7aby wrócić'
+    modes:
+      buy: '&8[&aKUP&8]'
+      sell: '&8[&aSPRZEDAJ&8]'
+      buy_and_sell: '&8[&aKUP&7/&aSPRZEDAJ&8]'
+      command: '&8[&eKOMENDA&8]'
+      trade: '&8[&eWYMIANA&8]'
+    discount_lore:
+    - ''
+    - '&7Zniżka&f: &e%discount%%'
+    - '&7Zniżka kończy się za&f: &e%time%'
+    player_shop:
+      #Zmienne: %amount%, %price%, %stock%, %mode%
+      trade_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena&f: &a%price%'
+      - '&7Możesz wymienić jeszcze &b%available%'
+      - ''
+      - '&7>> Kliknij aby wymienić'
+      #Zmienne: %amount%, %price%, %stock%, %mode%
+      buy_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena&f: &a%price%'
+      - '&7Cena/szt.&f: &a%price_per_unit%'
+      - '&7Aktualnie &b%stock% &7w magazynie'
+      - ''
+      - '&7>> Kliknij aby kupić'
+      #Zmienne: %amount%, %price%, %available%, %mode%
+      sell_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena&f: &a%price%'
+      - '&7Możesz sprzedać jeszcze &b%available%'
+      - ''
+      - '&7>> Kliknij aby sprzedać'
+      #Zmienne: %amount%, %price%, %available%, %mode%
+      buy_and_sell_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena kupna&f: &a%buy_price%'
+      - '&7Cena sprzedaży&f: &a%sell_price%'
+      - '&7Aktualnie &b%stock% &7w magazynie'
+      - '&7Możesz sprzedać jeszcze &b%available%'
+      - ''
+      - '&7>> Lewy przycisk aby kupić'
+      - '&7>> Prawy przycisk aby sprzedać'
+    admin_shop:
+      buy_and_sell_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena kupna&f: &a%buy_price%'
+      - '&7Cena sprzedaży&f: &a%sell_price%'
+      - '%limit_lore%'
+      - ''
+      - '&7>> Lewy przycisk aby kupić'
+      - '&7>> Prawy przycisk aby sprzedać'
+      trade_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena&f: &a%price%'
+      - '%limit_lore%'
+      - ''
+      - '&7>> Kliknij aby wymienić'
+      sell_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena&f: &a%price%'
+      - '%limit_lore%'
+      - ''
+      - '&7>> Kliknij aby sprzedać'
+      buy_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena&f: &a%price%'
+      - '%limit_lore%'
+      - ''
+      - '&7>> Kliknij aby kupić'
+      command_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena&f: &a%price%'
+      - '%limit_lore%'
+      - ''
+      - '&7>> Kliknij aby kupić komendę'
+      buy_limit_lore:
+      - ''
+      - '&7Kupiono: (&e%bought%&7/&e%limit%&7)'
+      - '&7Reset za: &e%reset%'
+      sell_limit_lore:
+      - ''
+      - '&7Sprzedano: (&e%bought%&7/&e%limit%&7)'
+      - '&7Reset za: &e%reset%'
+      buy_and_sell_limit_lore:
+      - ''
+      - '&7Kupiono lub sprzedano: (&e%bought%&7/&e%limit%&7)'
+      - '&7Reset za: &e%reset%'
+  
+  #------------------ Edytuj Wystawę ------------------#
+  edit_shopfront:
+    title: '&8Dodaj przedmioty na sprzedaż'
+    #Zmienne: %item_name%, %mode%
+    item_name: '&f%item_name% %mode%'
+    modes:
+      buy: '&8[&aKUP&8]'
+      sell: '&8[&aSPRZEDAJ&8]'
+      buy_and_sell: '&8[&aSPRZEDAJ&7/&aKUP&8]'
+      command: '&8[&eKOMENDA&8]'
+      trade: '&8[&eWYMIANA&8]'
+    player_shop:
+      trade_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena&f: &a%price%'
+      - '&7Możesz wymienić jeszcze &b%available%'
+      - ''
+      - '&7>> Kliknij aby edytować'
+      #Zmienne: %amount%, %price%, %stock%
+      sell_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena&f: &a%price%'
+      - '&7Aktualnie &b%stock% &7w magazynie!'
+      - ''
+      - '&7>> Kliknij aby edytować'
+      #Zmienne: %amount%, %price%, %available%
+      buy_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena&f: &a%price%'
+      - '&7Możesz kupić jeszcze &c%available%!'
+      - ''
+      - '&7>> Kliknij aby edytować'
+      buy_and_sell_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena kupna&f: &a%buy_price%'
+      - '&7Cena sprzedaży&f: &a%sell_price%'
+      - '&7Możesz kupić jeszcze &c%available%!'
+      - '&7Aktualnie &b%stock% &7w magazynie!'
+      - ''
+      - '&7>> Kliknij aby edytować'
+    admin_shop:
+      standard_lore:
+      - '&7Tryb&f: %mode%'
+      - ''
+      - '&7Ilość&f: &e%amount%'
+      - '&7Cena&f: &a%price%'
+      - '&7Limit gracza&f: &a%limit%'
+      - ''
+      - '&7>> Kliknij aby edytować'
+  
+  #--------------------- Magazyn ---------------------#
+  storage:
+    title: '&8Magazyn Sklepu'
+  
+#------------------ Edytuj Mieszkańca ------------------#
+  edit_villager:
+    title: '&8Edytuj mieszkańca'
+    size: 36
+    #To wymaga Citizens na serwerze
+    citizens_item:
+      material: PLAYER_HEAD
+      slot: 31
+      name: '&eUstaw skórkę'
+      lore:
+      - '&7Kliknij, aby ustawić skórkę gracza dla tego sklepu'
+    back_slot: 35
+    filler_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    items:
+      armorer:
+        material: IRON_CHESTPLATE
+        slot: 9
+        name: '&7Płatnerz'
+      butcher:
+        material: PORKCHOP
+        slot: 10
+        name: '&cRzeźnik'
+      cartographer:
+        material: MAP
+        slot: 11
+        name: '&bKartograf'
+      cleric:
+        material: POTION
+        slot: 12
+        name: '&dDuchowny'
+      farmer:
+        material: WHEAT
+        slot: 13
+        name: '&eRolnik'
+      fisherman:
+        material: COD
+        slot: 14
+        name: '&bRybak'
+      fletcher:
+        material: FLETCHING_TABLE
+        slot: 15
+        name: '&eStrzałkarz'
+      leatherworker:
+        material: LEATHER
+        slot: 16
+        name: '&cGarbarz'
+      librarian:
+        material: BOOK
+        slot: 17
+        name: '&6Bibliotekarz'
+      mason:
+        material: BRICK
+        slot: 18
+        name: '&cKamieniarz'
+      nitwit:
+        material: PAPER
+        slot: 19
+        name: '&fGłupek'
+      shepherd:
+        material: WHITE_WOOL
+        slot: 20
+        name: '&fPasterz'
+      toolsmith:
+        material: IRON_AXE
+        slot: 21
+        name: '&7Narzędziarz'
+      weaponsmith:
+        material: IRON_SWORD
+        slot: 22
+        name: '&7Zbrojmistrz'
+      none:
+        material: VILLAGER_SPAWN_EGG
+        slot: 23
+        name: '&cBrak'
+      #Starsze wersje
+      blacksmith:
+        material: ANVIL
+        slot: 9
+        name: '&7Kowal'
+      priest:
+        material: POTION
+        slot: 11
+        name: '&dKapłan'
+      normal:
+        material: VILLAGER_SPAWN_EGG
+        slot: 12
+        name: '&cBrak'
+  
+  #-------------------- Sprzedaj Sklep --------------------#
+  sell_shop:
+    title: '&8Czy jesteś pewny?'
+    size: 27
+    filler_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    items:
+      no_cancel:
+        material: RED_TERRACOTTA
+        slot: 14
+        name: '&cNie, anuluj'
+      #Jeśli sklep jest wielokrotnego użytku (utworzony komendą)
+      yes_sell:
+        material: LIME_TERRACOTTA
+        slot: 12
+        name: '&aTak, sprzedaj sklep'
+        #Symbole zastępcze: %amount%
+        lore:
+        - '&7Otrzymasz &a50%'
+        - '&7(&a%amount%&7) wydanych diamentów'
+        - '&7gdy opuścisz/sprzedasz ten sklep'
+        - ''
+      #Jeśli sklep nie jest wielokrotnego użytku (utworzony jajkiem spawnu)
+      yes_remove:
+        material: LIME_TERRACOTTA
+        slot: 12
+        name: '&aTak, usuń sklep'
+        lore:
+        - '&7To &cusunie &7sklep'
+        - '&7mieszkańca i da ci'
+        - '&7nowe jajko spawnu sklepu!'
+  
+  #-------------------- Edytuj Przedmiot --------------------#
+  edit_item:
+    title: '&8Edytuj przedmiot'
+    size: 54
+    item_slot: 4
+    filler_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 17
+    - 18
+    - 26
+    - 27
+    - 35
+    - 36
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+    back_slot: 53
+    limit_cycle:
+      player: '&eGracz&7 | Serwer'
+      server: '&7Gracz |&e Serwer'
+    mode_cycle:
+      player_shop:
+        item_trade: '&eSprzedaj &7(handel przedmiotem)'
+        sell: '&eSprzedaj &7| Kup | Kup i sprzedaj'
+        buy: '&7Sprzedaj | &eKup &7| Kup i sprzedaj'
+        buy_and_sell: '&7Sprzedaj | Kup | &eKup i sprzedaj'
+      admin_shop:
+        item_trade: '&eSprzedaj &7(handel przedmiotem)'
+        sell: '&eSprzedaj &7| Kup | Kup i sprzedaj | Komenda'
+        buy: '&7Sprzedaj | &eKup &7| Kup i sprzedaj | Komenda'
+        command: '&7Sprzedaj | Kup | Kup i sprzedaj | &eKomenda'
+        buy_and_sell: '&7Sprzedaj | Kup | &eKup i sprzedaj &7| Komenda'
+    
+    items:
+      mode:
+        material: OAK_SIGN
+        slot: 22
+        name: '&eTryb&7: %mode%'
+        #%cycle% jest zastępowane wartościami cyklu powyżej
+        lore:
+        - '&7Kliknij, aby przełączyć:'
+        - '%cycle%'
+      amount:
+        material: CHEST
+        slot: 21
+        name: '&eIlość&7: &r%amount%'
+        lore:
+        - '&7Kliknij, aby edytować'
+      price:
+        material: GOLD_INGOT
+        slot: 23
+        name: '&eCena&7: &r%price%'
+        lore:
+        - '&7Kliknij, aby edytować cenę'
+        - ''
+        - '&7>> Kliknij z przedmiotem, aby handlować'
+        - '&7przedmiotem zamiast diamentami'
+        buy_and_sell_lore:
+        - '&7>> Lewy klik, aby ustawić cenę kupna'
+        - '&7>> Prawy klik, aby ustawić cenę sprzedaży'
+        - ''
+        - '&7>> Kliknij z przedmiotem, aby handlować'
+        - '&7przedmiotem zamiast diamentami'
+      delete:
+        material: BARRIER
+        slot: 49
+        name: '&cUsuń'
+        lore:
+        - '&7Kliknij, aby &cusunąć &7przedmiot'
+      command:
+        material: COMMAND_BLOCK
+        slot: 31
+        name: '&eKomenda'
+        lore:
+        - '&7Aktualne komendy:'
+        - '&7- &e%command%&7'
+        - ''
+        - '&7>> Lewy klik, aby dodać'
+        - '&7>> Prawy klik, aby zresetować'
+      buy_limit:
+        material: FEATHER
+        slot: 31
+        name: '&eLimit kupna&7: %limit%'
+        lore:
+        - '&7>> Kliknij, aby edytować'
+      player_limit:
+        material: PLAYER_HEAD
+        slot: 30
+        name: '&eLimit gracza&7: &f%limit%'
+        lore:
+        - '&7>> Prawy klik, aby przełączyć:'
+        - '%cycle%'
+        - ''
+        - '&7>> Lewy klik, aby edytować'
+      limit_cooldown:
+        material: CLOCK
+        slot: 32
+        name: '&eCzas odnowienia limitu&7: &f%cooldown%'
+        lore:
+        - '&7Następne odnowienie limitu: &e%next%'
+        - ''
+        - '&7>> Lewy klik, aby edytować czas odnowienia'
+        - '&7>> Prawy klik, aby &cwyczyścić &7limity'
+      discount:
+        material: EMERALD
+        slot: 13
+        name: '&eZniżka&7: &f%discount%%'
+        lore:
+        - '&7Kończy się: &e%discount_end%'
+        - ''
+        - '&7>> Kliknij, aby edytować'
+  confirm_action:
+    title: '&8Czy jesteś pewny?'
+    size: 27
+    filler_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    items:
+      accept:
+        material: GREEN_TERRACOTTA
+        slot: 12
+        name: '&aTak, potwierdź'
+      cancel:
+        material: RED_TERRACOTTA
+        slot: 14
+        name: '&cNie, anuluj'
+  
+  
+  #-------------------- Magazyn Wygasłych --------------------#
+  expired_storage:
+    title: '&8Magazyn wygasłych'
+
+#----------------- Ustawienia przedmiotu sklepu mieszkańca -----------------#
+
+shop_item:
+  material: VILLAGER_SPAWN_EGG
+  name: '&b&lUtwórz Sklep Mieszkańca!'
+  #Symbole zastępcze: %shop_size%, %storage_size%
+  lore:
+  - '&aPostaw &7to jajko spawnu, aby'
+  - '&7utworzyć swój własny'
+  - '&aSklep Mieszkańca&7!'
+  - ''
+  - '&7>> &aRozmiar sklepu&7: &c%shop_size%'
+  - '&7>> &aRozmiar magazynu&7: &c%storage_size%'

@@ -1,0 +1,148 @@
+#----------------------- General settings -----------------------#
+
+#Villager Market"s message prefix
+plugin_prefix: '' # '&8[&aVM&8]&r'
+#Should configuration be auto-updated?
+auto_update: true
+#How much (%) should shop owner get refunded when selling shop
+refund_percent: 50.0
+#How often should villager shops auto-save? (minutes)
+auto_save_interval: 10
+#Enabling this will change all blocks two blocks beneath
+#all buyable playershops to a redstone block if the shop has an
+#owner, and to air if the shop is available for purchase
+enable_redstone_output: false
+#How often should redstone output from bought villagers update? (seconds)
+redstone_update_interval: 20
+#How much (%) should be taken as tax?
+tax: 0
+#Currency symbol
+currency: ' diamentów'
+#Should the currency symbol be placed before worth?
+currency_before: false
+#Maximum item price
+max_item_price: 1000000
+#Should activity log be saved when server/plugin restarts?
+auto_log: false
+#Chat input used to cancel actions
+cancel: cancel
+#Should players be required to collect the earned money in the edit shop GUI?
+require_collect: false
+#Enable per-adminshop permission requirements. The required
+#permission will be based on the UUID of the shop:
+#e.g. villagermarket.adminshop.01b0be53-aa98-471c-86c7-a12fbf4e7482
+#You can retrieve a shop's UUID with /vm getid
+per_adminshop_permissions: false
+#Will require villagermarket.buy_shop to buy shops
+buy_shop_permission: false
+#Will drop spawn egg when a shops created with spawn egg is removed
+drop_spawn_egg: true
+#Will disable announcing new updates when joining
+disable_update_announce: false
+#Will disable the 'toggle lore' button for shopfronts
+disable_lore_toggle: false
+#Language to use
+language: pl_PL
+#Enables placing shop eggs on non-solid blocks (E.g. slabs, grass, doors)
+enable_non_solid_placement: false
+#Maximum amount of items that can be sold in one transaction
+max_sell_amount: 64
+#Should income be distributed to all trusted players?
+distribute_income: true
+#The admin shop that should open when doing /shop. Leave blank to disable.
+default_admin_shop: ''
+
+#----------------------- Villager settings -----------------------#
+
+villager:
+  name_always_display: true
+  killable: false
+  #Enabling this will make the villagers move around like normal
+  #villagers and enable gravity.
+  ai: true
+  default_profession: NONE
+  #Template for custom names
+  custom_name: '&7[&b%player%&7] &r%custom_name%'
+  #Maximum name length
+  max_name_length: 12
+  #Players will not be able to use shop names containing these words
+  name_blacklist:
+  - whore
+  - nigger
+
+
+#------------------ Plugin support settings ------------------#
+
+#Allow shop egg placing only in regions where the player is a member or owner
+world_guard: false
+#Enable PlotSquared support
+plot_squared: true
+#Enable Lands support
+lands: true
+towny:
+  #Enable towny support
+  enabled: true
+  #Allows players to place shop eggs in wilderness
+  allow_in_wilderness: false
+  #Only allow shops placed in shop plots
+  shop_plot_only: true
+
+
+#---------------------- Rent settings ----------------------#
+
+#Max limit for shop renting (days)
+max_rent: 30
+#How often should temporary shops be checked? (seconds)
+#This interval is also used for limits and discounts.
+expire_check_interval: 10
+
+
+#-------------------- Discount settings --------------------#
+
+#Auto discounts will add random discounts to random items
+#at a set interval and duration.
+auto_discount:
+  enable: true
+  announce: true
+  discount:
+    min: 10
+    max: 20
+  #Duration of discount
+  duration: 1h
+  #How often new discounts should be added
+  interval: 12h
+  #Amount of items which should have discounts
+  item_amount: 3
+  #Amount of random shops which should have discounts applied
+  shop_amount: 1
+  #List the admin shop IDs which should use auto discounts here
+  admin_shops:
+  - shop_id
+
+#------------------------- Sounds -------------------------#
+
+sounds:
+  create_shop: ENTITY_VILLAGER_TRADE
+  open_shop: ENTITY_VILLAGER_TRADE
+  menu_click: UI_BUTTON_CLICK
+  buy_shop: ENTITY_EXPERIENCE_ORB_PICKUP
+  add_item: ENTITY_EXPERIENCE_ORB_PICKUP
+  remove_item: BLOCK_LAVA_EXTINGUISH
+  buy_item: ENTITY_ITEM_PICKUP
+  sell_item: ENTITY_EXPERIENCE_ORB_PICKUP
+  back: UI_BUTTON_CLICK
+  change_profession: ITEM_ARMOR_EQUIP_LEATHER
+  sell_shop: ENTITY_EXPERIENCE_ORB_PICKUP
+  remove_villager: BLOCK_LAVA_EXTINGUISH
+  quick_add: ENTITY_ITEM_PICKUP
+  expired: BLOCK_ANVIL_DESTROY
+  increase_time: ENTITY_EXPERIENCE_ORB_PICKUP
+  collect_money: ENTITY_EXPERIENCE_ORB_PICKUP
+  max_shops: BLOCK_ANVIL_DESTROY
+  give_shop_item: ENTITY_ITEM_PICKUP
+
+#----------------------- Other settings -----------------------#
+
+#Blacklisted items
+item_blacklist:
+- DEAD_BUSH

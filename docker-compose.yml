@@ -1,75 +1,127 @@
+name: programowaniecraft
+
 services:
-  minecraft:
-    image: itzg/minecraft-server
-    ports:
-      - 25565:25565 # minecraft
+  proxy:
+    image: itzg/mc-proxy
     environment:
-      # ===== CUSTOM CONFIG =====
-      CFG_DISCORD_CHAT_CHANNEL: 1220720732854816788
-      CFG_DISCORD_COMMAND_ROLE_ALLOWED: 819892011364122624 # Guild ID for @everyone
-      CFG_DISCORD_CONSOLE_CHANNEL: 000000000000000000
-      CFG_DISCORD_INVITE_CODE: programowanie-819892011364122624
-      CFG_DISCORD_LINK_BYPASS_NAME: Kuba_Z2
-      CFG_DISCORD_USERS_ONLINE_CHANNEL_ID: 000000000000000000 # The channel name changes
-      CFG_DISCORD_WHITELIST_BYPASS_ROLE: 830528317768990721 # Should be a server administrator
-      CFG_DISCORD_VOICE_ENABLED: "true"
-      CFG_DISCORD_VOICE_CATEGORY: 000000000000000000
-      CFG_DISCORD_VOICE_LOBBY_CHANNEL: 000000000000000000
-      CFG_MAP_WEB_ADDRESS: "https://example.com"
-      CFG_MAP_INTERNAL_WEBSERVER_PORT: 80
+      CFG_POSTGRES_PASSWORD_FILE: /run/secrets/pg_password
+      CFG_MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
+      # TYPE: VELOCITY
+      TYPE: CUSTOM
+      BUNGEE_JAR_URL: https://api.papermc.io/v2/projects/velocity/versions/3.4.0-SNAPSHOT/builds/515/downloads/velocity-3.4.0-SNAPSHOT-515.jar
       ICON: "https://cdn.discordapp.com/avatars/1220700277573816330/037d7503e3970212dd8e8838822c0605.png?size=64"
-      MOTD: "Witaj na \u00A7l\u00A74ProgramowanieCraft\u00A7r!\u00A7r\n\u00A79discord.gg/programowanie-819892011364122624\u00A7r"
-      OPS: |
-        Kuba_Z2
-        jedrek_0429
-      SEED: "-923969161156079860"
-      SPAWN_PROTECTION: 0
-      # ===== END CUSTOM CONFIG =====
-      CFG_DB_DATABASE: minecraft
-      CFG_DB_HOST: database
-      CFG_DB_PASSWORD_FILE: /run/secrets/db_password
-      CFG_DB_PORT: 3306
-      CFG_DB_USERNAME: programowaniecraft
+      OVERRIDE_ICON: "true"
+      SERVER_NAME: ProgramowanieCraft
+      REPLACE_ENV_DURING_SYNC: "true"
+      REPLACE_ENV_VARIABLES: "true"
+    ports:
+      - "25565:25565"
+    stdin_open: "true"
+    restart: unless-stopped
+    tty: "true"
+    secrets:
+      - proxy_forwarding
+      - pg_password
+      - mysql_password
+    volumes:
+      - ./proxy/config:/config:ro
+      - ./proxy/plugins:/plugins:ro
+      - ./data/proxy:/server
+    depends_on:
+      - main
+      - limbo
+      - postgres
+      - mysql
+
+  main:
+    image: itzg/minecraft-server
+    environment:
+      CFG_DISCORD_CHAT_CHANNEL: 1387566278377472030
+      CFG_DISCORD_GUILD_INVITE: https://discord.gg/programowanie-819892011364122624
       CFG_DISCORD_TOKEN_FILE: /run/secrets/discord_token
+      CFG_POSTGRES_PASSWORD_FILE: /run/secrets/pg_password
+      CFG_MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
+      CFG_PROXY_FORWARDING_FILE: /run/secrets/proxy_forwarding
+      SPAWN_PROTECTION: 0
       DIFFICULTY: normal
       ENABLE_RCON: "false"
       EULA: "true"
       MAX_PLAYERS: 1024
-      MEMORY: 8G
+      MEMORY: 16G
+      USE_AIKAR_FLAGS: "true"
+      SIMULATION_DISTANCE: "12"
+      VIEW_DISTANCE: "29"
       ONLINE_MODE: "false"
-      OVERRIDE_ICON: "true"
       OVERRIDE_SERVER_PROPERTIES: "true"
       PATCH_DEFINITIONS: /config-patches
       REPLACE_ENV_DURING_SYNC: "true"
       REPLACE_ENV_VARIABLES: "true"
-      SERVER_NAME: ProgramowanieCraft
+      PAPER_CHANNEL: experimental
       TYPE: PAPER
-      VERSION: 1.20.4
+      VERSION: 1.21.5
     stdin_open: "true"
     secrets:
-      - db_password
+      - pg_password
+      - mysql_password
       - discord_token
+      - proxy_forwarding
     restart: unless-stopped
-    tty: "true"
     volumes:
-      - ./config:/config:ro
-      - ./plugins:/plugins:ro
-      - ./config-patches:/config-patches:ro
-      - minecraftdata:/data
+      - ./main/config:/config:ro
+      - ./main/plugins:/plugins:ro
+      - ./main/config-patches:/config-patches:ro
+      - ./data/main:/data
+      - ./main/bootstrap.txt:/data/bootstrap.txt:ro
+    depends_on:
+      - postgres
+      - mysql
 
-  database:
-    image: mariadb:lts
+  limbo:
+    image: itzg/minecraft-server
     environment:
-      MARIADB_DATABASE: minecraft
-      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/db_password
-      MARIADB_USER: programowaniecraft
-      MARIADB_PASSWORD_FILE: /run/secrets/db_password
-    restart: always
+      CFG_PROXY_FORWARDING_FILE: /run/secrets/proxy_forwarding
+      ENABLE_RCON: "false"
+      EULA: "true"
+      TYPE: LIMBO
+      LIMBO_BUILD: 52
+      CUSTOM_SERVER_PROPERTIES: |
+        forwarding-secrets=$${CFG_PROXY_FORWARDING}
+        velocity-modern=true
+      REPLACE_ENV_DURING_SYNC: "true"
+      REPLACE_ENV_VARIABLES: "true"
+    stdin_open: "true"
+    restart: unless-stopped
     secrets:
-      - db_password
+      - proxy_forwarding
     volumes:
-      - ./mariadb.conf.d:/etc/mysql/conf.d:ro
-      - minecraftdbdata:/var/lib/mysql
+      - ./limbo/config:/config:ro
+      - ./data/limbo:/data
+
+  postgres:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD_FILE: /run/secrets/pg_password
+    secrets:
+      - pg_password
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+
+  mysql:
+    image: mysql:latest
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+    secrets:
+      - mysql_password
+      - mysql_root_password
+    volumes:
+      - ./data/mysql:/var/lib/mysql
 
   map:
     image: nginx:latest
@@ -81,22 +133,44 @@ services:
       - ./map/certbot/www/:/var/www/certbot/:ro
       - ./map/certbot/conf/:/etc/nginx/ssl/:ro
     depends_on:
-      - minecraft
+      - main
 
   certbot:
     image: certbot/certbot:latest
     volumes:
       - ./map/certbot/www/:/var/www/certbot/:rw
       - ./map/certbot/conf/:/etc/letsencrypt/:rw
-      
-volumes:
-  minecraftdata:
-    external: "true"
-  minecraftdbdata:
-    external: "true"
+
+  backup:
+    init: true # https://github.com/dubiousjim/dcron/issues/13, also used by Dockerfile for forwarding the STDOUT of the backup.sh
+    build:
+      context: backup
+    restart: unless-stopped
+    environment:
+      SERVICES: |
+        map
+        main
+        limbo
+        proxy
+        postgres
+        mysql
+      BACKEND_SERVERS: |
+        main
+        limbo
+    volumes:
+      - ./docker-compose.yml:/docker-compose.yml:ro
+      - ./data:/backup:ro
+      - ./backups:/archive
+      - /var/run/docker.sock:/var/run/docker.sock
 
 secrets:
-  db_password:
-    file: ./secrets/db_password
+  pg_password:
+    file: ./secrets/pg_password
+  mysql_password:
+    file: ./secrets/mysql_password
+  mysql_root_password:
+    file: ./secrets/mysql_root_password
   discord_token:
     file: ./secrets/discord_token
+  proxy_forwarding:
+    file: ./secrets/proxy_forwarding
