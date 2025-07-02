@@ -3,9 +3,14 @@ name: programowaniecraft
 services:
   proxy:
     image: itzg/mc-proxy
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
     environment:
       CFG_POSTGRES_PASSWORD_FILE: /run/secrets/pg_password
       CFG_MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
+      CFG_DISCORD_GUILD_INVITE: https://discord.gg/programowanie-819892011364122624
       # TYPE: VELOCITY
       TYPE: CUSTOM
       BUNGEE_JAR_URL: https://api.papermc.io/v2/projects/velocity/versions/3.4.0-SNAPSHOT/builds/515/downloads/velocity-3.4.0-SNAPSHOT-515.jar
@@ -18,7 +23,6 @@ services:
       - "25565:25565"
     stdin_open: "true"
     restart: unless-stopped
-    tty: "true"
     secrets:
       - proxy_forwarding
       - pg_password
@@ -35,6 +39,10 @@ services:
 
   main:
     image: itzg/minecraft-server
+    deploy:
+      resources:
+        limits:
+          cpus: '3'
     environment:
       CFG_DISCORD_CHAT_CHANNEL: 1387566278377472030
       CFG_DISCORD_GUILD_INVITE: https://discord.gg/programowanie-819892011364122624
@@ -47,7 +55,7 @@ services:
       ENABLE_RCON: "false"
       EULA: "true"
       MAX_PLAYERS: 1024
-      MEMORY: 16G
+      MEMORY: 12G
       USE_AIKAR_FLAGS: "true"
       SIMULATION_DISTANCE: "12"
       VIEW_DISTANCE: "29"
@@ -78,6 +86,10 @@ services:
 
   limbo:
     image: itzg/minecraft-server
+    deploy:
+      resources:
+        limits:
+          cpus: '0.3'
     environment:
       CFG_PROXY_FORWARDING_FILE: /run/secrets/proxy_forwarding
       ENABLE_RCON: "false"
@@ -160,7 +172,7 @@ services:
     volumes:
       - ./docker-compose.yml:/docker-compose.yml:ro
       - ./data:/backup:ro
-      - ./backups:/archive
+      - /mnt/backups:/archive
       - /var/run/docker.sock:/var/run/docker.sock
 
 secrets:

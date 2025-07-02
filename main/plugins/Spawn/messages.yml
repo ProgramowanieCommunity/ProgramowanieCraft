@@ -1,0 +1,34 @@
+# Spawn by rockquiet
+# MiniMessage formatting is supported on 1.18.2+ Paper based servers -> https://docs.advntr.dev/minimessage/format.html
+# Legacy formatting is supported -> https://minecraft.wiki/w/Formatting_codes
+# to disable a message set it to: ''
+# remove %prefix% from a message if it should not use it
+prefix: '&7[&2Spawn&7]&r'
+# successful teleport to spawn
+teleport: '%prefix% &aPomyślnie przeniesiono na spawn.'
+# successfully teleported another player to spawn - /spawn %player%
+teleport-other: '%prefix% &aPomyślnie przeniesiono gracza &2%player% &ana spawn.'
+# if the player to be teleported is offline - /spawn %player%
+player-not-found: '%prefix% &cGracz &4%player% &cnie został znaleziony!'
+# when the player wants to teleport but has an active teleport cooldown
+cooldown-left: '%prefix% &cPoczekaj jeszcze &4%cooldown% &csekund(y) przed kolejną teleportacją.'
+# time left until the player gets teleported to spawn
+delay-left: '%prefix% &6Zostaniesz przeniesiony za &e%delay% &6sekund(y).'
+# delayed teleport failed because the player moved
+teleport-canceled: '%prefix% &cTeleportacja anulowana - poruszyłeś się!'
+# spawn set at current position
+spawn-set: '%prefix% &aSpawn ustawiony pomyślnie.'
+# all files reloaded
+reload: '%prefix% &aWszystkie pliki zostały przeładowane pomyślnie.'
+# no spawn set in config - set one with /spawn set
+no-spawn: '%prefix% &cSpawn nie jest ustawiony!'
+# plugin is disabled in current world
+world-disabled: '%prefix% &cNie możesz używać tego tutaj!'
+# player is not in allowed game mode
+gamemode-restricted: '%prefix% &cNie możesz używać tego w trybie &4%gamemode%&c!'
+# player does not have permission to execute the command
+no-permission: '%prefix% &cBrak uprawnień!'
+# command cannot be used in console
+no-player: '%prefix% &cTa komenda może być użyta tylko przez graczy!'
+# used for auto updating this file, do not change
+file-version: 3

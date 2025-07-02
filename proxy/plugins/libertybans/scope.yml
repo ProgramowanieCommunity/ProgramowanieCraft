@@ -1,0 +1,48 @@
+ # This file is for proxies like BungeeCord and Velocity. It is irrelevant for single servers.
+ # It controls scope-related settings for this particular server on the network.
+ # 
+ # Unlike other configuration files, one should NOT copy the scope.yml across multiple server instances
+ # The default scope used to punish players
+ # 
+ # GLOBAL - uses the global scope
+ # THIS_SERVER - applies to this server only via the server name
+ # PRIMARY_CATEGORY - uses the first category listed in 'categories-applicable-to-this-server'.
+ # 
+ # If you use PRIMARY_CATEGORY but no categories are configured, a warning is printed and THIS_SERVER is used.
+default-punishing-scope: 'GLOBAL'
+ # The scope categories applicable to this server
+ # 
+ # For example, multiple servers might fall under the 'kitpvp' category,
+ # then staff members may use '-category=kitpvp' to create punishment applying to these servers
+categories-applicable-to-this-server: []
+ # Whether to require permissions for using scopes:
+ # - libertybans.scope.global, libertybans.scope.server.<server>, and libertybans.scope.category.<category>
+ #   become requirements to use the relevant scopes explicitly.
+ # - libertybans.scope.default must be granted to use commands without a scope argument
+require-permissions: false
+ # Controls how the name of this server is detected for use with the server scope.
+ # 
+ # The server name should correspond to the name of the backend server as configured on the proxy.
+ # The name of the proxy itself is 'proxy' by default, unless overridden.
+server-name:
+   # By default, we try to detect the name of this backend server using plugin messaging.
+   # Make sure 'use-plugin-messaging' is enabled in the config.yml for this detection to succeed.
+   # 
+   # If running a proxy, the detected name becomes 'proxy'.
+   # 
+   # Plugin messaging requires at least one player to have logged into the backend server.
+   # Auto detection may fail, for example, if you ban someone through the console but no one has joined yet.
+   # 
+   # To disable auto detection, set this to false then configure 'override-value' to the server name you wish to use.
+   # Re-enabling this option may require a restart (/libertybans restart)
+  auto-detect: true
+   # If auto detection is disabled, this option should be set to the name of the server.
+   # 
+   # Server names should be unique, but this is not a strict requirement.
+   # If you want a scope applying to multiple servers, you should use categories instead.
+  override-value: 'myserver'
+   # Auto detection requires a player to have logged in. But you might punish players, e.g. via console, before that.
+   # By default, if auto detection has not yet occurred, the global scope will be used as a fallback.
+   # The fallback scope may be configured here to something else.
+  fallback-if-auto-detect-fails: '*'
+

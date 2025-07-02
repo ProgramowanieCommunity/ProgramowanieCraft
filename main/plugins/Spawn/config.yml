@@ -1,0 +1,102 @@
+#  ____                               _                            _               _      _
+# / ___| _ __   __ ___      ___ __   | |__  _   _   _ __ ___   ___| | ____ _ _   _(_) ___| |_
+# \___ \| '_ \ / _` \ \ /\ / / '_ \  | '_ \| | | | | '__/ _ \ / __| |/ / _` | | | | |/ _ \ __|
+#  ___) | |_) | (_| |\ V  V /| | | | | |_) | |_| | | | | (_) | (__|   < (_| | |_| | |  __/ |_
+# |____/| .__/ \__,_| \_/\_/ |_| |_| |_.__/ \__, | |_|  \___/ \___|_|\_\__, |\__,_|_|\___|\__|
+#       |_|                                 |___/                         |_|
+# Wiki - https://github.com/rockquiet/Spawn/wiki
+
+plugin:
+  # if the plugin should search for updates on server start
+  # this will only send a message to the console, not to an admin joining the server
+  update-checks: true
+  # a list of worlds where the plugin should or should not work
+  # DISABLED: world-list is not used
+  # BLACKLIST: the plugin will not work in worlds listed below
+  # WHITELIST: the plugin will only work in worlds listed below
+  list-type: disabled
+  world-list:
+    - ExampleEntryForWorldList
+    - AnotherExampleWorld
+  # restrict the usage to specific game modes (only for players teleporting themselves)
+  gamemode-restricted: false
+  # possible values: SURVIVAL, ADVENTURE, CREATIVE, SPECTATOR
+  gamemode-list:
+    - Survival
+    - Adventure
+
+# use the player's current head rotation instead of the defined one on teleport
+use-player-head-rotation:
+  enabled: false
+
+# toggle if the player takes fall damage on teleport
+fall-damage:
+  enabled: false
+
+# teleport the player to spawn on join
+teleport-on-join:
+  enabled: false
+  # teleport the player ONLY on first join
+  only-first-join: false
+
+# cooldown for /spawn command
+teleport-cooldown:
+  enabled: false
+  # how long in SECONDS the player has to wait before teleporting to spawn again
+  seconds: 10
+
+# delay until teleport for /spawn command
+teleport-delay:
+  enabled: true
+  # the delay in SECONDS until the player gets teleported to spawn
+  seconds: 30
+  # toggle if the teleport should be canceled if the player moves
+  cancel-on-move: true
+  # toggle if the player should get the blindness effect during delay
+  # the effect will not work properly if a short delay time is used
+  blindness: false
+
+# toggle if the player should be teleported to spawn if they fall into the void
+teleport-out-of-void:
+  enabled: false
+  # the height at which the player gets teleported out of the void to spawn
+  # Minecraft playable Altitude: -64 -> 320 [integer]
+  check-height: -64
+
+# toggle if the player should be teleported to spawn if they die
+teleport-on-respawn:
+  enabled: false
+  # toggle if the bed spawn-point should be ignored
+  ignore-bed-spawn: false
+  # toggle if the respawn anchor spawn-point should be ignored
+  ignore-anchor-spawn: false
+
+# toggle if the player should be teleported to spawn if they enter a world other than the spawn world
+teleport-on-world-change:
+  enabled: false
+  # toggle if the world should also be checked on join
+  # this can interfere with teleport on join
+  check-on-join: false
+
+# spawns particles on teleport
+particles:
+  enabled: true
+  # all particles: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+  # use these for 1.8: https://hub.spigotmc.org/nexus/service/local/repositories/snapshots/archive/org/spigotmc/spigot-api/1.8.8-R0.1-SNAPSHOT/spigot-api-1.8.8-R0.1-20160221.082514-43-javadoc.jar/!/org/bukkit/Effect.html
+  particle: PORTAL
+  # the number of particles which get used
+  amount: 100
+
+# play a sound on teleport
+sounds:
+  enabled: true
+  # all sounds: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  # sounds for Minecraft 1.8 - 1.20: https://docs.andre601.ch/Spigot-Sounds/sounds/
+  sound: ENTITY_ENDERMAN_TELEPORT
+  # the volume of the sound
+  volume: 1.0
+  # the pitch of the sound
+  pitch: 1.0
+
+# used for auto updating this file, do not change
+file-version: 5

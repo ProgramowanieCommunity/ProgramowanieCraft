@@ -74,7 +74,7 @@ placing_bypasses_wg_passthrough = true
     # Can use -g [group] before the flag to set group flags (ex. -g members pvp deny).
     # Can use PlaceholderAPI placeholders in string flags (ex. greeting, farewell).
     flags = [
-        "-g nonowners build deny",
+        "-g nonmembers build deny",
         "pvp allow",
         # "build deny",
         # "-g owner build allow",

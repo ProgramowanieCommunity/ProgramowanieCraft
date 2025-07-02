@@ -1,0 +1,30 @@
+# Configure the library bundled with the plugin.
+settings:
+  # This option defines if the plugin/library logs everything,
+  # Very useful if you have an issue with the plugin!
+  is_verbose: false
+  # This enables an experimental addon system which will create an addons folder
+  # The addons folder only accepts .jar or .zip files that contain addon.properties
+  #
+  # This option does work, and you can make addons however, Please do not use turn this to true
+  # I am not ready yet to write official documentation on how to use this!
+  addon_system: false
+  # This controls the format of the numerical data.
+  number_format: '#,###.##'
+  # This controls the type of rounding for how the numerical data is rounded.
+  #
+  # Available types: up, down, ceiling, floor, half_up, half_down, half_even, unnecessary
+  rounding: half_even
+  # This config option decides how deep to search through a given folder.
+  # It only applies to folders that are dynamic like the crates folder or vouchers
+  recursion_depth: 1
+  # A list of available custom item plugins
+  #   -> ItemsAdder
+  #   -> Oraxen
+  #   -> Nexo
+  #   -> None
+  #
+  # If the option is set to blank, it'll pick whatever plugin it feels like picking.
+  # Set the value to None if you do not want any.
+  custom-items-plugin: None
+  

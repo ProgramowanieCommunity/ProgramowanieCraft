@@ -1,0 +1,41 @@
+settings:
+  layer:
+    # Label for map layer
+    label: Ochrony
+    # Show controls for map layer
+    show-controls: true
+    # Whether map layer is hidden by default
+    default-hidden: false
+    # Update interval for map layer
+    update-interval: 30
+    # Priority for map layer
+    priority: 10
+    # zIndex for map layer
+    z-index: 10
+  claim:
+    stroke:
+      # Stroke color (#AARRGGBB)
+      color: '#FF00FF00'
+      # Stroke weight
+      weight: 3
+    fill:
+      # Fill color (#AARRGGBB)
+      color: '#3300FF00'
+    popup:
+      # Popup for claims
+      tooltip: |-
+        <span style="font-weight:bold;"><regionname></span><br/>
+        <owners><members>
+      # <flags>
+      # Popup text for owners if present
+      owners: 'Właściciele: <span style="font-weight:bold;"><owners></span><br/>'
+      # Popup text for members if present
+      members: 'Członkowie: <span style="font-weight:bold;"><members></span><br/>'
+      # Popup text for flags if present
+      flags: Flagi:<br/><span style="display:inline-block;margin-left:10px"><flags></span><br/>
+      # How each flag entry should look
+      flag-entry: '<span style="font-weight:bold;"><flag></span>: <value>'
+    regions:
+      # A list of regions that will not show up on the map.
+      blacklist:
+        - example_region

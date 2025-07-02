@@ -21,6 +21,9 @@ groups:
     - register
     - skin
     - msg
+    - ps
+    - ochrona
+    - spawn
     # - msg
     # - tpdeny
     # - tpa
@@ -35,4 +38,10 @@ groups:
     # - balance
     # - warp
     subcommands:
+    - ps addowner
+    - ps removeowner
+    - ps help
+    - ochrona addowner
+    - ochrona removeowner
+    - ochrona help
     # - help about

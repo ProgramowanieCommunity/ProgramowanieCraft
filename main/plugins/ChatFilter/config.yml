@@ -1,0 +1,168 @@
+###################################################################
+#                                                                 #
+#                  ChatFilter config file                         #
+#                                                                 #
+#   If you need any support or have any problems feel free        #
+#   to join the support discord:                                  #
+#   https://discord.gg/VKCwEh94hN                                 #
+#                                                                 #
+#   https://github.com/A4Papers/ChatFilter                        #
+#                                                                 #
+###################################################################
+
+#  Command aliases: /chatfilter, /cf and /clearchat(for clearing chat only)
+#  /cf help - no permission needed 
+#  /cf reload - chatfilter.reload - reload plugin config
+#  /cf blacklist (list/ip/word) <args/word> - chatfilter.blacklist
+#  /cf whitelist (list/ip/word) <args/word> - chatfilter.whitelist
+#  /cf pause - chatfilter.pause
+#  /cf clear - chatfilter.clear
+
+#  Other permissions:
+#  chatfilter.bypass - bypass all filters(inc: chat, books, signs and anvils)
+#  chatfilter.bypass.chat - bypass in chat only
+#  chatfilter.bypass.command - bypass in commands only
+#  chatfilter.bypass.sign - bypass on a sign only
+#  chatfilter.bypass.anvil - bypass in a anvil only
+#  chatfilter.bypass.book - bypass in books only
+#  chatfilter.bypass.repeat - bypass repeat messsages only
+#  chatfilter.bypass.caps - bypass decapping only
+#  chatfilter.bypass.pause - bypass paused chat only
+#  chatfilter.bypass.swear - bypass all swear filters
+#  chatfilter.bypass.ip - bypass all ip filters
+#  chatfilter.bypass.swear.<config entry> – Allows the player to bypass set config entries
+#  chatfilter.bypass.ip.<config entry> – Allows the player to bypass set config entries
+
+#  chatfilter.view - players with this perm can view filtered messages
+#  chatfilter.blacklist.remove - Able to remove words via the list
+#  chatfilter.whitelist.remove - Able to remove words via the list
+
+#  chatfilter.import - /cf import - import plain text words from a data.txt file
+
+# Available languages: - If you have made a custom lang file, Feel free to contact me, and I'll add it to the plugin for others
+# en = English
+# zh = Chinese
+# es = Spanish
+# pl = Polish
+# da = Danish
+
+#############################
+
+# Message customisation is done in the messages_(yourlang).properties File
+
+#############################
+
+locale: en # When changing this to 'pl', the plugin changes the language to German for some reason, we will store Polish translations in the English file.
+
+settings:
+  # Block fancy text? Often used with hacked clients.
+  blockFancyChat: false
+
+  # Prevent same or repeated messages
+  antiRepeatEnabled: false
+  
+  # How long till the player can say the repeated message again (In seconds)
+  repeatDelay: 5
+  
+  # How similar does the players repeat message need be before it's considered repeating? 0-100%
+  similarMessagePercent: 60%
+  
+  # Remove excessive UPPERCASE? Names are exempt
+  deCap: false
+
+  # How many UPPERCASE letters before we lowercase the message?
+  capsAmount: 5
+  
+  # Allow URLs? If set to false all URLs will be handled as advertising
+  allowURL: true
+  
+  # What format/colour for items the filter catches.
+  swearHighLight: "&c%catch%&r"
+
+
+# Anti characters spam - 'aaaaaaaaaaaaaaaaaaaa' to 'aaaa'
+antiSpam:
+  # Enable Anti characters spam?
+  enable: false
+
+  # If the string of repeat characters is above this amount it is then counted as spam
+  aboveAmount: 4
+
+  # The amount of characters we replace the spam with.
+  replaceAmount: 4
+
+# Let the regex generator use leet speak? https://en.wikipedia.org/wiki/Leet
+enableLeetSpeak: true
+
+#  Regex used to identify links
+URL_REGEX: ^((https?|ftp)://|(www|ftp)\\.)
+
+# Event Priorities - Change these if the events are clashing with other plugins.
+# HIGH, HIGHEST, LOW, LOWEST, MONITOR, NORMAL
+EventPriority:
+  SwearListener: HIGHEST
+  SignListener: NORMAL
+  RepeatCharListener: NORMAL
+  PauseChatListener: HIGHEST
+  CommandListener: NORMAL
+  ChatDelayListener: NORMAL
+  CapsListener: NORMAL
+  BookListener: NORMAL
+  AdvilListener: NORMAL
+
+
+perWordOptions:
+  # Create per-word options?
+  enabled: true
+  # If 'false' what list will all words created be added to?
+  nameOfList: PresetWordsList
+
+# Presets for when adding via /cf blacklist (These are Per-word options)
+# Setting up presets will make adding in-game far simpler as you won't need customise each word/ip filter..
+default:
+  word:
+    Enabled: false
+    Warn:
+      # Notify staff when the filter catches a player?
+      Staff: true
+      # Send the player the default warning message? Custom message can be defined below. Set this to false if you are sending a custom message.
+      Player: true
+      # Send catch to console?
+      Console: true
+    CancelChat:
+      # Cancel sending the message to chat?
+      Cancel: true
+      # if above is false, Do you wish to replace the word?
+      Replace: false
+      # If the above is true, What do we replace the word with?
+      ReplaceWith: Cookies
+    # Run command or send a message to the player, Messages can be custom per filter item
+    # however it's recomended you disable warning the player in the warn section above(Warn.Player) to prevent sending a message twice.
+    # <RunCommand> - Have the server run a command.
+    # <SendMessage> Send a message to the player.
+    Action:
+      #- '<RunCommand>discord broadcast #game-reports **%player%** has been caught by the swear filter for saying %item%'
+      #- <RunCommand>msg %player% please do not say %item%
+      #- <SendMessage>&c%player%! &e%item% &cIs not allowed.
+      - none
+  ip:
+    Enabled: false
+    Warn:
+      Staff: true
+      Player: true
+      Console: true
+    CancelChat:
+      Cancel: true
+      Replace: false
+      ReplaceWith: Cookies
+    Action:
+      - none
+
+# Check commands for swearing/ips?
+checkCommands: true
+
+# Commands to you wish to check
+commands:
+  msg:
+    swear: true
+    ip: false
