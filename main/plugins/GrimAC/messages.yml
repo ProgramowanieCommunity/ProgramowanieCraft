@@ -1,0 +1,64 @@
+# \u00BB is » (double >>), ANSI and UTF-8 interpret this differently... you may even see ? due to this
+prefix: "&bGrim &8\u00BB"
+
+alerts-enabled: "%prefix% &fPowiadomienia włączone"
+alerts-disabled: "%prefix% &fPowiadomienia wyłączone"
+verbose-enabled: "%prefix% &fTryb szczegółowy włączony"
+verbose-disabled: "%prefix% &fTryb szczegółowy wyłączony"
+brands-enabled: "%prefix% &fInformacje o klientach włączone"
+brands-disabled: "%prefix% &fInformacje o klientach wyłączone"
+client-brand-format: "%prefix% &f%player% dołączył(a) używając %brand%"
+console-specify-target: "%prefix% &cMusisz podać cel jako konsola!"
+reloading: "%prefix% &7Przeładowywanie konfiguracji..."
+reloaded: "%prefix% &fKonfiguracja została przeładowana."
+reload-failed: "%prefix% &cNie udało się przeładować konfiguracji."
+player-not-found: "%prefix% &cGracz jest zwolniony lub offline!"
+player-not-this-server: "%prefix% &cGracz nie jest na tym serwerze!"
+spectate-return: "<click:run_command:/grim stopspectating><hover:show_text:\"/grim stopspectating\">\n%prefix% &fKliknij tutaj, aby wrócić do poprzedniej lokalizacji\n</hover></click>"
+cannot-spectate-return: "%prefix% &cMożesz to zrobić tylko po obserwowaniu gracza"
+cannot-run-on-self: "%prefix% &cNie możesz użyć tej komendy na sobie!"
+upload-log: "%prefix% &fWysłano dziennik debugowania na: %url%"
+upload-log-start: "%prefix% &fWysyłanie dziennika... proszę czekać"
+upload-log-not-found: "%prefix% &cNie można znaleźć tego dziennika"
+upload-log-upload-failure: "%prefix% &cWystąpił problem podczas wysyłania dziennika, sprawdź konsolę po więcej informacji"
+disconnect:
+    timeout: "<lang:disconnect.timeout>"
+    closed: "<lang:disconnect.closed>"
+    error: "<red>Wystąpił błąd podczas przetwarzania pakietów. Proszę skontaktuj się z administratorami."
+    blacklisted-forge: "<red>Twoja wersja Forge jest zablokowana z powodu wbudowanych hacków zasięgu.<newline><gold>Wersje dotknięte problemem: 1.18.2-1.19.3<newline><newline><red>Zobacz więcej: https://github.com/MinecraftForge/MinecraftForge/issues/9309."
+run-as-player: "%prefix% &cTa komenda może być używana tylko przez graczy!"
+run-as-player-or-console: "%prefix% &cTa komenda może być używana tylko przez graczy lub konsolę!"
+# Valid placeholders:
+# %prefix%
+# %player%
+# %check_name%
+# %description%
+# %experimental%
+# %vl% - violations
+# %verbose% - extra information from the check such as offsets, not all checks will add information
+alerts-format: "%prefix% &f%player% &bzostał(a) wykryty(a) &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
+alerts-format-proxy: "%prefix% &f[&cproxy&f] &f%player% &bzostał(a) wykryty(a) &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
+experimental-symbol: "*"
+profile:
+    - "&7======================"
+    - "%prefix% &bProfil gracza &f%player%"
+    - "&bPing: &f%ping%"
+    - "&bWersja: &f%version%"
+    - "&bKlient: &f%brand%"
+    - "&bCzułość pozioma: &f%h_sensitivity%%"
+    - "&bCzułość pionowa: &f%v_sensitivity%%"
+    - "&bFastMath włączony: &f%fast_math%"
+    - "&7======================"
+help:
+    - "&7======================"
+    - "/grim alerts &f- &7Przełącz powiadomienia"
+    - "/grim brands &f- &7Przełącz informacje o klientach"
+    - "/grim profile <gracz> &f- &7Zobacz informacje o graczu"
+    - "/grim help &f- &7Zobacz tę pomoc"
+    - "/grim debug <gracz> &f- &7Wyjście predykcji dla developerów"
+    - "/grim perf &f- &7ms/predykcja dla developerów"
+    - "/grim reload &f- &7Przeładuj konfigurację"
+    - "/grim spectate <gracz> &f- &7Obserwuj gracza"
+    - "/grim verbose &f- &7Pokaż wszystkie wykrycia bez buforów"
+    - "/grim log [0-255] &f- &7Wyślij dziennik debugowania dla flag predykcji"
+    - "&7======================"
