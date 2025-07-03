@@ -72,15 +72,18 @@ Punishments:
       - "2:0 ban-ip %player% Używanie cheatów. Jeśli uważasz, że to pomyłka, skontaktuj się z administracją. ${CFG_DISCORD_GUILD_INVITE}"
       # - "1:1 [webhook]"
       # - "1:1 [proxy]"
-  Hitboxes:
-    remove-violations-after: 300
-    checks:
-      - "Hitboxes"
-    commands:
-      - "5:3 [alert]"
-      - "10:0 ban-ip %player% Używanie cheatów. Jeśli uważasz, że to pomyłka, skontaktuj się z administracją. ${CFG_DISCORD_GUILD_INVITE}"
-      # - "5:3 [webhook]"
-      # - "5:3 [proxy]"
+
+  # Disabled due to false positives https://github.com/GrimAnticheat/Grim/pull/2041
+  # Hitboxes:
+  #   remove-violations-after: 300
+  #   checks:
+  #     - "Hitboxes"
+  #   commands:
+  #     - "5:3 [alert]"
+  #     - "10:0 ban-ip %player% Używanie cheatów. Jeśli uważasz, że to pomyłka, skontaktuj się z administracją. ${CFG_DISCORD_GUILD_INVITE}"
+  #     # - "5:3 [webhook]"
+  #     # - "5:3 [proxy]"
+
   Misc:
     remove-violations-after: 300
     checks:
